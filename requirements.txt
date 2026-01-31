@@ -1,0 +1,29 @@
+# Core ML frameworks
+torch==2.5.1
+transformers==4.48.3
+accelerate==1.3.0
+deepspeed==0.16.4
+peft==0.14.0
+trl==0.13.0
+
+# Video processing
+av==14.0.1
+decord==0.6.0
+opencv-python==4.10.0.84
+
+# Evaluation metrics
+sentence-transformers==2.2.2
+rouge-score==0.1.2
+
+# Data handling
+datasets==3.2.0
+numpy==1.26.4
+pandas==2.0.3
+
+# Utilities
+wandb==0.18.7
+tqdm==4.66.1
+packaging==23.1
+
+# Qwen2.5-VL specific
+qwen-vl-utils==0.0.8

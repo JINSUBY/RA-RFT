@@ -1,0 +1,129 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+timer1_env/
+rarft_env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# Model checkpoints
+checkpoints/
+*.pth
+*.pt
+*.bin
+*.safetensors
+
+# Logs
+logs/
+*.log
+wandb/
+runs/
+
+# Data
+dataset/videos/
+dataset/features/
+*.mp4
+*.avi
+*.mkv
+*.mov
+
+# Training datasets (to be updated later)
+dataset/annotations/hi_vtg_train.json
+
+# Keep annotation files but ignore preprocessed
+dataset/**/preprocessed/
+dataset/**/cache/
+
+# Temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# DeepSpeed
+.deepspeed_env
+
+# Output directories
+output/
+results/
+predictions/
+
+# Evaluation results
+*.jsonl
+*.json.gz
+eval_results_*.json
+
+# Backup files
+*.bak
+*.backup
+*_backup.*
+*_old.*
+
+# Compressed files (except essential ones)
+*.zip
+*.tar.gz
+*.tar
+*.rar
+!requirements.txt
+!environment.yml
+
+# Cache directories
+.cache/
+__pycache__/
+.pytest_cache/
+
+# Hugging Face cache (optional - comment out if you want to cache)
+# .cache/huggingface/
+
+# W&B artifacts
+artifacts/
+wandb-metadata.json
+
+# Slurm output files
+slurm-*.out
+*.sbatch.out
+
+# Profiling
+*.prof
+*.lprof
+
+# Core dumps
+core.*
+
+# Environment files with secrets
+.env
+.env.local
+secrets.yaml
+credentials.json
