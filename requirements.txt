@@ -22,8 +22,8 @@ pandas==2.0.3
 
 # Utilities
 wandb==0.18.7
-tqdm==4.66.1
-packaging==23.1
+tqdm>=4.66.3
+packaging>=24.0
 
 # Qwen2.5-VL specific
 qwen-vl-utils==0.0.8
