@@ -70,7 +70,7 @@ The evaluation pipeline consists of two stages:
 
 ### Stage 1: Inference (Model Response Generation)
 
-Generate model responses for the RIQ (Relevance-Irrelevance Query) test set:
+Generate model responses for the HI-VTG test set (Including relevance and irrelevance queries):
 
 ```bash
 # Single-GPU inference
