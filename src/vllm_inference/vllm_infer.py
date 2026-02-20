@@ -54,6 +54,8 @@ class vllmWrapper:
             "gpu_memory_utilization": 0.95,
             "disable_mm_preprocessor_cache": True,  # Otherwise, once the cache hits, the number of FPS won't match the number of videos, causing a bug. Our speed bottleneck isn't here.
         }
+        if hasattr(args, 'dtype') and args.dtype != "auto":
+            engine_args["dtype"] = args.dtype
         engine_args["limit_mm_per_prompt"] = {"image": 0, "video": 1, "audio": 0}
         self.model = LLM(**engine_args)
 

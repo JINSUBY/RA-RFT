@@ -1,0 +1,182 @@
+[
+  {
+    "video": "dataset/videos/tvgbench/8_Mg-mOvvMw.mp4",
+    "query": "assemble everything with omelette",
+    "model_output": "<think>\nThe query \"assemble everything with omelette\" suggests that the video might show the process of combining various ingredients into an omelette. However, the video content shows the preparation of a sandwich with roasted tomatoes, beetroot, and other ingredients, and the final step involves assembling these ingredients on a piece of bread with a fried egg on top. This does not align with the query.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query \"assemble everything with omelette\" because the video content does not show the preparation of an omelette. Instead, it shows the preparation of a sandwich with roasted tomatoes, beetroot, and other ingredients, and the final step involves assembling these ingredients on a piece of bread with a fried egg on top.\n</answer>\n<correction>\nassemble everything with sandwich\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      176.0,
+      330.99
+    ],
+    "gt_output": "<answer>176.0 to 331.0</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/8_Mg-mOvvMw.mp4",
+    "query": "disassemble all cold items with pancake",
+    "model_output": "<think>\nThe query \"disassemble all cold items with pancake\" does not match any segment in the video. The video content is about making a sandwich with roasted tomatoes, beetroot, and other ingredients, and there is no mention of pancakes or cold items being disassembled.\n</think>\n<answer>\nThe video does not contain a relevant segment for the query \"disassemble all cold items with pancake\" as it does not match any part of the video content.\n</answer>\n<correction>\ndisassemble all cold items with sandwich\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>This query is clearly unrelated to the video. It asks for disassembling a set of 'all cold items' and uses a pancake, whereas the video shows assembling everything with an omelette; the action, the object identity, and the object attribute requested here are all absent from the segment. disassemble, pancake, all cold items assemble everything with omelette</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Action/FineGrainedAction",
+      "Object/ObjectExistence",
+      "Attribute/AttributeValue"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/2bbc6cdf-b662-498e-9a9f-231dd5ac2a9e.mp4",
+    "query": "How many blue spirit level is on the brick?",
+    "model_output": "<think>\nThe query \"How many blue spirit level is on the brick?\" does not seem to be directly related to the content of the video. The video shows a person working on a wooden structure, using various tools, and measuring the structure. There is no mention of a brick or a blue spirit level in the video.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query \"How many blue spirit level is on the brick?\" as the query is not related to the content of the video.\n</answer>\n<correction>\nA relevant query could be: \"How many blue spirit levels are on the wooden structure?\"\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      0.9,
+      65.97
+    ],
+    "gt_output": "<answer>0.9 to 66.0</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/2bbc6cdf-b662-498e-9a9f-231dd5ac2a9e.mp4",
+    "query": "How many blue hammer is next to the brick?",
+    "model_output": "<think>\nThe query \"How many blue hammer is next to the brick?\" does not seem to be directly related to the content of the video. The video primarily shows a person working on a wooden structure, using various tools, and measuring the wood. There is no mention of a blue hammer or a brick in the video.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query \"How many blue hammer is next to the brick?\" as the query does not align with the content of the video.\n</answer>\n<correction>\nA relevant query could be: \"How many blue tools are being used by the person working on the wooden structure?\"\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query does not align well with the video segment. It asks for a blue hammer next to the brick, whereas the video shows a blue spirit level sitting on the brick and there is no hammer positioned next to the brick. hammer, next to How many blue spirit level is on the brick?</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence",
+      "Object/ObjectSpatialRelation"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_TIEzvhv6xaI.mp4",
+    "query": "A man in a white shirt is standing next to the court.",
+    "model_output": "<think>\nThe query \"A man in a white shirt is standing next to the court.\" seems to be referring to a person in the video who is likely an official or coach, given the context of a volleyball game. The man in the white shirt is positioned near the court, which aligns with the description in the query.\n</think>\n<answer>\n0.00 to 15.01\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      12.13,
+      19.25
+    ],
+    "gt_output": "<answer>12.1 to 19.2</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_TIEzvhv6xaI.mp4",
+    "query": "A man in a black shirt is standing next to the court.",
+    "model_output": "<think>\nThe query \"A man in a black shirt is standing next to the court.\" does not match the content of the video. The video shows a volleyball game with players in black and white uniforms, but there is no man in a black shirt standing next to the court.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query.\nThe query is asking about a man in a black shirt, but the video only shows players in black and white uniforms.\n</answer>\n<correction>\nA man in a white shirt is standing next to the court.\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query seems to have some inconsistencies with the video: it asks for a man in a black shirt, but the footage shows a man wearing a white shirt next to the court, so there is no visual evidence supporting the black-shirt description. black A man in a white shirt is standing next to the court.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Attribute/AttributeValue"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_WT7ZtXsTslM.mkv",
+    "query": "They are shaped into what appears to be a shoe.",
+    "model_output": "<think>\nThe query \"They are shaped into what appears to be a shoe.\" is relevant to the segment where the person is working on a cake that is being shaped into the form of a shoe. This is evident from the video content where the person is seen working on a cake that is being transformed into the shape of a shoe.\n</think>\n<answer>\n9.10 to 54.10\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      8.99,
+      31.13
+    ],
+    "gt_output": "<answer>9.0 to 31.1</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_WT7ZtXsTslM.mkv",
+    "query": "They are scattered into what appears to be a shoe.",
+    "model_output": "<think>\nThe query \"They are scattered into what appears to be a shoe.\" does not seem to match the content of the video. The video shows a person making a cake that looks like a shoe, not a shoe being scattered into a cake.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query.\nThe query is asking about a shoe being scattered into a cake, but the video shows a person making a cake that looks like a shoe.\n</answer>\n<correction>\nThey are scattered into what appears to be a shoe.\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query seems to have some inconsistencies with the video. It describes the items being scattered into a shoe-like form, but the clip actually shows them being carefully shaped into what appears to be a shoe; there is no scattering action visible in the scene, so this phrasing does not match the footage. are scattered into They are shaped into what appears to be a shoe.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Action/FineGrainedAction"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/s37-d25.avi",
+    "query": "He gets a loaf of bread.",
+    "model_output": "<think>\nThe person in the video opens the refrigerator, takes out a loaf of bread, and places it on the counter. This aligns with the query \"He gets a loaf of bread.\"\n</think>\n<answer>\n5.90 to 15.90\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      6.22,
+      16.19
+    ],
+    "gt_output": "<answer>6.2 to 16.2</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/s37-d25.avi",
+    "query": "He buys a loaf of bread.",
+    "model_output": "<think>\nThe query \"He buys a loaf of bread.\" does not match the video content. The video shows a person opening a refrigerator, taking out a loaf of bread, and then cutting it on a cutting board. This sequence does not involve buying the bread.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query \"He buys a loaf of bread.\" because the person is seen taking the bread out of the refrigerator, not buying it.\n</answer>\n<correction>\nHe takes a loaf of bread out of the refrigerator.\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query seems slightly inconsistent with the footage: it claims he buys a loaf of bread, but the video shows him obtaining a loaf directly and preparing it (taking out a cutting board and knife, removing the bread from a bag, and slicing it). There is no depiction of a purchase or transaction in the scenes, so \"buys\" does not match what is shown. buys He gets a loaf of bread.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Action/FineGrainedAction"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_bJ6SpcLM7GE.mp4",
+    "query": "Several people are holding lights in a dark arena.",
+    "model_output": "<think>\nThe query \"Several people are holding lights in a dark arena.\" is relevant to the video content. The video shows a dark arena with people holding lights, which aligns with the description in the query.\n</think>\n<answer>\n0.00 to 10.02\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      0.0,
+      10.64
+    ],
+    "gt_output": "<answer>0.0 to 10.6</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_bJ6SpcLM7GE.mp4",
+    "query": "Several people are waving phones in a dark arena.",
+    "model_output": "<think>\nThe query \"Several people are waving phones in a dark arena.\" seems to be describing a scene where the audience is actively participating by using their phones, which is a common occurrence during concerts. This aligns with the description of a dark arena with people in the background, which is consistent with a concert setting.\n</think>\n<answer>\n60.83 to 81.67\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query does not align well with the video: it asks for people waving phones, whereas the segment shows people holding lights in a dark arena \u2014 the people are not seen waving nor holding phones in the scene. phones, waving Several people are holding lights in a dark arena.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence",
+      "Action/FineGrainedAction"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/HQ8BB.mp4",
+    "query": "person turning the light on.",
+    "model_output": "<think>\nThe person enters the room and turns on the light, which illuminates the room. This action is relevant to the query \"person turning the light on.\"\n</think>\n<answer>\n5.01 to 10.12\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      2.5,
+      9.2
+    ],
+    "gt_output": "<answer>2.5 to 9.2</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/HQ8BB.mp4",
+    "query": "person leaving the light off.",
+    "model_output": "<think>\nThe person enters the room and turns off the light, as indicated by the change in the room's brightness. This aligns with the query of \"person leaving the light off.\"\n</think>\n<answer>\n8.12 to 13.65\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query does not align well with the video segment. It asks for the person leaving the light off, whereas the clip clearly shows the person turning the light on; the described state of the light being off directly contradicts the observed action of switching the light to the on state. leaving, off person turning the light on.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Action/FineGrainedAction",
+      "Attribute/AttributeValue"
+    ]
+  }
+]

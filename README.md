@@ -62,11 +62,76 @@ bash scripts/train_rarft.sh
 
 For detailed training instructions, see [docs/TRAINING.md](docs/TRAINING.md).
 
-## 📈 Evaluation
+## 📈 Inference & Evaluation
 
+The evaluation pipeline consists of two stages:
+1. **Inference**: Generate model responses for test queries
+2. **Evaluation**: Assess response quality using LLM-based metrics
+
+### Stage 1: Inference (Model Response Generation)
+
+Generate model responses for the RIQ (Relevance-Irrelevance Query) test set:
+
+```bash
+# Single-GPU inference
+python inference.py \
+    --model_path ./ckpts/your_model \
+    --test_data_path ./dataset/anno/test.json \
+    --output_dir ./inference_output \
+    --preprocessed_data_path ./dataset/preprocessed_video \
+    --batch_size 8
+
+# Multi-GPU inference with automatic result aggregation
+bash scripts/inference.sh
 ```
-**TO BE UPDATED**
+
+**Key parameters:**
+- `--model_path`: Path to trained model checkpoint
+- `--test_data_path`: Test dataset JSON file
+- `--preprocessed_data_path`: Preprocessed video features (speeds up inference)
+- `--batch_size`: Batch size per GPU
+- `--curr_idx`, `--total_idx`: For manual multi-GPU data sharding
+
+**Output:** `inference_results_merged.json` containing model responses for all test samples.
+
+### Stage 2: Evaluation (LLM-based Assessment)
+
+Evaluate the generated responses using GPT-4 as a judge:
+
+```bash
+# Configure your OpenAI API key
+export OPENAI_API_KEY="your-api-key"
+
+# Run LLM evaluation
+python evaluate.py \
+    --data ./inference_output/inference_results_merged.json \
+    --out ./evaluation_results/metrics.json \
+    --num_splits 27 \
+    --num_workers 27
+
+# Or use the convenience script
+bash scripts/evaluation.sh
 ```
+
+**Evaluation metrics:**
+- **Relevance Classification**: Accuracy, precision, recall, F1 for relevant/irrelevant detection
+- **RA-IoU** (Relevance-Aware IoU): Temporal localization accuracy with R@0.3, R@0.5, R@0.7
+- **RT-IoU** (Reasoning-Tag IoU): Semantic Relevance Category prediction accuracy using Jaccard similarity
+- **Reasoning Quality**: LLM-scored quality of refusal explanations (0-5 scale)
+- **SBERT Similarity**: Semantic similarity between model response and ground-truth response
+- **Hardness-Level Analysis**: Performance breakdown by query difficulty (original/weak/moderate/strong)
+
+**Key parameters:**
+- `--data`: Path to inference results (merged JSON)
+- `--out`: Output path for evaluation metrics
+- `--num_splits`: Number of data splits for parallel processing
+- `--num_workers`: Number of parallel worker processes (default: matches num_splits)
+
+**Output files:**
+- `metrics.json`: Comprehensive evaluation metrics
+- `metrics_items.json`: Per-sample evaluation details with LLM scores
+
+**Note:** The LLM evaluation uses parallel processing to speed up API calls. Adjust `num_workers` based on your API rate limits (recommended: ≤20 to avoid throttling).
 
 ## 🤖 Model Checkpoints
 

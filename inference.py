@@ -41,6 +41,7 @@ def parse_args():
     parser.add_argument("--curr_idx", type=int, default=0, help="Current GPU index for multi-GPU evaluation")
     parser.add_argument("--total_idx", type=int, default=1, help="Total number of GPUs")
     parser.add_argument("--pipeline_parallel_size", type=int, default=1, help="Pipeline parallel size for vLLM")
+    parser.add_argument("--dtype", type=str, default="auto", help="Data type for model (auto, half, float16, bfloat16)")
     return parser.parse_args()
 
 
@@ -51,6 +52,7 @@ class ModelArgs:
         self.pipeline_parallel_size = args.pipeline_parallel_size
         self.total_pixels = args.max_pixels
         self.max_new_tokens = args.max_new_tokens
+        self.dtype = args.dtype
 
 
 def load_model_and_processor(args):
@@ -150,7 +152,7 @@ def evaluate(args):
 
     for sample in tqdm(test_data, desc="Evaluating"):
         video_path = sample['video']
-        qa_items = sample['QA']
+        qa_items = sample['GRPO']
         video_inputs, fps_inputs = load_video_features(video_path, args.preprocessed_data_path)
 
         for batch_start in range(0, len(qa_items), args.batch_size):
@@ -173,7 +175,7 @@ def evaluate(args):
 
     # Save results
     os.makedirs(args.output_dir, exist_ok=True)
-    results_filename = f"evaluation_results_gpu{args.curr_idx}.json" if args.total_idx > 1 else "evaluation_results.json"
+    results_filename = f"inference_results_gpu{args.curr_idx}.json" if args.total_idx > 1 else "inference_results.json"
     results_path = os.path.join(args.output_dir, results_filename)
 
     with open(results_path, 'w') as f:

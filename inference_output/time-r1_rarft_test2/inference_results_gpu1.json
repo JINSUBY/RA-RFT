@@ -1,0 +1,184 @@
+[
+  {
+    "video": "dataset/videos/tvgbench/v_ZVIi4lPU6h0.mp4",
+    "query": "different pumpkins with famous people sculpt in pumpkins.",
+    "model_output": "<think>\nThe query asks for different pumpkins with famous people sculpted in them. The video shows various pumpkins with different designs, including some with famous people's faces, which aligns with the query.\n</think>\n<answer>\n0.00 to 10.12\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      0.0,
+      10.06
+    ],
+    "gt_output": "<answer>0.0 to 10.1</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_ZVIi4lPU6h0.mp4",
+    "query": "different pumpkins with unknown people sculpt in pumpkins.",
+    "model_output": "<think>\nThe video shows a person carving a pumpkin into a jack-o'-lantern, which is a relevant activity to the query of \"different pumpkins with unknown people sculpt in pumpkins.\"\n</think>\n<answer>\n0.00 to 67.10\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>This query seems slightly inconsistent with the video: it asks about pumpkins featuring unknown people, but the footage shows pumpkins with famous people being sculpted and a man carving and lighting a pumpkin. There is no part of the clip that depicts unknown people appearing on the pumpkins, so the modified query does not match what is shown. unknown different pumpkins with famous people sculpt in pumpkins.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Attribute/AttributeValue"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/6C0mL9n9Nko.mp4",
+    "query": "have a needed things",
+    "model_output": "<think>\nThe query \"have a needed things\" seems to be asking about the necessary items or materials required for a specific task or project. The video appears to show various materials and tools being used in a crafting or DIY project, which could be relevant to the query.\n</think>\n<answer>\n10.52 to 24.18\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      11.0,
+      40.0
+    ],
+    "gt_output": "<answer>11.0 to 40.0</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/6C0mL9n9Nko.mp4",
+    "query": "drops a broken item",
+    "model_output": "<think>\nThe query \"drops a broken item\" does not seem to be directly related to the content of the video. The video appears to be focused on crafting and creating a unicorn horn, which does not involve breaking or dropping items.\n</think>\n<answer>\nThe video does not contain a segment that is relevant to the query \"drops a broken item.\"\n</answer>\n<correction>\nA relevant query could be \"drops an item while crafting.\"\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>This query is clearly unrelated to the video: it describes someone dropping a broken item, but the video does not show any dropping action or a damaged object being handled. The requested event (dropping a broken item) simply does not occur in the scene. item, broken, drops have a needed things</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence",
+      "Attribute/AttributeValue",
+      "Action/FineGrainedAction"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/5Jn7OuXb0FA.mp4",
+    "query": "Glue the pin",
+    "model_output": "<think>\nThe query \"Glue the pin\" seems to be related to the crafting process shown in the video. The video demonstrates the use of a hot glue gun to attach various decorative elements to a piece of fabric, which is likely the pin being referred to.\n</think>\n<answer>\n74.40 to 85.10\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      76.0,
+      83.0
+    ],
+    "gt_output": "<answer>76.0 to 83.0</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/5Jn7OuXb0FA.mp4",
+    "query": "Glue the nail",
+    "model_output": "<think>\nThe query \"Glue the nail\" does not directly match any segment in the provided video. The video content is focused on crafting a brooch, which involves cutting fabric, gluing embellishments, and using a hot glue gun, but it does not specifically mention gluing a nail.\n</think>\n<answer>\nThe video does not contain a segment that is relevant to the query \"Glue the nail.\"\n</answer>\n<correction>\nGlue the embellishments\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query seems to have some inconsistencies with the video. It asks for gluing a nail, but the video shows someone gluing a pin, and there is no evidence of a nail in the scene, so the action described would not match what is visible. nail Glue the pin</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_uJ_QCxMDfag.mp4",
+    "query": "Another man is standing in the drive way watching him.",
+    "model_output": "<think>\nThe query \"Another man is standing in the drive way watching him.\" is relevant to the video content. The video shows a man mowing the lawn, and another person is visible in the driveway observing the activity.\n</think>\n<answer>\n8.32 to 23.15\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      7.26,
+      20.74
+    ],
+    "gt_output": "<answer>7.3 to 20.7</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/v_uJ_QCxMDfag.mp4",
+    "query": "Another woman is standing in the street helping him.",
+    "model_output": "<think>\nThe query mentions \"Another woman is standing in the street helping him.\" However, the video only shows a man mowing the lawn and another person standing on the sidewalk, not in the street. This suggests that the person standing on the sidewalk is not helping the man mow the lawn.\n</think>\n<answer>\nThe video does not contain a relevant segment for the query.\nThe query is not relevant because the person standing on the sidewalk is not helping the man mow the lawn.\n</answer>\n<correction>\nAnother man is standing on the sidewalk helping him.\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>This query is clearly unrelated to the clip: it describes a woman standing in the street and helping him, while the video shows another man standing in the driveway watching the person push a lawn mower. The subject, the action, and the setting all differ from what is depicted, so the query does not match the segment. woman, helping, street Another man is standing in the drive way watching him.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence",
+      "Action/FineGrainedAction",
+      "Scene/SceneExistence"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/a3daf5dc-0809-4217-b7e2-fd868b212dfe.mp4",
+    "query": "In what location did I see car boot?",
+    "model_output": "<think>\nThe query \"In what location did I see car boot?\" is asking about the location where the car boot was seen. The video shows a person opening the car boot and taking out items, which is relevant to the query.\n</think>\n<answer>\n0.00 to 29.12\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      7.86,
+      97.53
+    ],
+    "gt_output": "<answer>7.9 to 97.5</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/a3daf5dc-0809-4217-b7e2-fd868b212dfe.mp4",
+    "query": "In what garage did I see bicycle?",
+    "model_output": "<think>\nThe query \"In what garage did I see bicycle?\" does not seem to be related to the content of the video. The video primarily shows a person setting up a tent in a desert area and does not contain any information about a garage or a bicycle.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query \"In what garage did I see bicycle?\" as the content of the video does not include any information about a garage or a bicycle.\n</answer>\n<correction>\nA relevant query could be: \"Where did I see a tent in the video?\"\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>The query does not align well with the video segment: it now asks where in a garage a bicycle was seen, but the footage actually centers on a car boot and does not present a garage environment or any bicycle. The combination of asking for a garage location and a bicycle therefore mismatches the observed content. bicycle, garage In what location did I see car boot?</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence",
+      "Scene/SceneExistence"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/584e542e-1968-4cb8-bd34-aebe80faffdf.mp4",
+    "query": "Where did I put the nylon?",
+    "model_output": "<think>\nThe person is seen holding a nylon in their hand, which suggests that they might have put it somewhere in the kitchen. The relevant segment might be around the time when the person is handling the nylon.\n</think>\n<answer>\n45.12 to 50.34\n</answer>\n<correction>NIL</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      13.2,
+      88.03
+    ],
+    "gt_output": "<answer>13.2 to 88.0</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/584e542e-1968-4cb8-bd34-aebe80faffdf.mp4",
+    "query": "Where did she put the nylon?",
+    "model_output": "<think>\nThe person is seen holding a nylon in their hand and placing it into a trash bag. This action suggests that the person is disposing of the nylon, which is a common practice for cleaning up kitchen waste.\n</think>\n<answer>\n46.10 to 53.12\n</answer>\n<correction>\nNIL\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>This query seems slightly inconsistent with the video: it asks about 'she' placing the nylon, but the clip only shows the speaker asking where they put the nylon. The video depicts the speaker looking for their own nylon, not a different person placing it, so asking about 'she' does not match the observed scene. she Where did I put the nylon?</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectPartRelation"
+    ]
+  },
+  {
+    "video": "dataset/videos/tvgbench/s36-d50.avi",
+    "query": "The person got out a spoon.",
+    "model_output": "<think>\nThe query \"The person got out a spoon.\" does not seem to be relevant to the video content. The video shows the person preparing food on a kitchen counter, but there is no indication of them retrieving a spoon from a drawer or cabinet.\n</think>\n<answer>\nThe video does not contain a relevant segment for the query \"The person got out a spoon.\" as the person is not shown retrieving a spoon from a drawer or cabinet.\n</answer>\n<correction>\nThe corrected query could be: \"The person got out a knife.\"\n</correction><|im_end|>",
+    "gt_relevant": true,
+    "gt_timestamp": [
+      24.63,
+      36.87
+    ],
+    "gt_output": "<answer>24.6 to 36.9</answer>",
+    "irrelevance_level": "",
+    "gt_categories": []
+  },
+  {
+    "video": "dataset/videos/tvgbench/s36-d50.avi",
+    "query": "Two people put away a fork.",
+    "model_output": "<think>\nThe query \"Two people put away a fork.\" does not match the content of the video. The video shows a single person in a kitchen, and there is no indication of another person or the action of putting away a fork.\n</think>\n<answer>\nThe video does not contain a relevant segment to the query \"Two people put away a fork.\" because the video only shows one person in the kitchen, and there is no indication of another person or the action of putting away a fork.\n</answer>\n<correction>\nTwo people put away a fork.\n</correction><|im_end|>",
+    "gt_relevant": false,
+    "gt_timestamp": null,
+    "gt_output": "<answer>This query is clearly unrelated to the video: it describes two people putting away a fork, but the footage shows a single person handling a spoon \u2014 taking it from the drawer, using it to crack and scoop the egg, and then washing and putting that same spoon away \u2014 there are no two people and no fork in the scenes. Two people, put away, fork The person got out a spoon.</answer>",
+    "irrelevance_level": "",
+    "gt_categories": [
+      "Object/ObjectExistence",
+      "Action/FineGrainedAction",
+      "Attribute/Counting"
+    ]
+  }
+]
