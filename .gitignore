@@ -43,6 +43,7 @@ checkpoints/
 *.pt
 *.bin
 *.safetensors
+ckpts/
 
 # Logs
 logs/
@@ -53,6 +54,7 @@ runs/
 # Data
 dataset/videos/
 dataset/features/
+dataset/preprocessed_video/
 *.mp4
 *.avi
 *.mkv

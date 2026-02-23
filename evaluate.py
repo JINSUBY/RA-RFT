@@ -1,329 +1,180 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Parallel evaluation of model responses with concurrent processing.
+
+This script splits the input data into multiple chunks and evaluates them
+in parallel to significantly speed up evaluation when API calls are the bottleneck.
+
+Metrics:
+1) overall relevance accuracy
+2) per-class precision, recall, F1, within-class accuracy
+3) Mean temporal IoU (all)
+4) Mean category Jaccard
+5) Macro-F1
+6) Micro-F1
+7) Label-wise F1
+"""
+
 import argparse
 import json
-import os
-import re
+import multiprocessing as mp
 import time
+import warnings
+from pathlib import Path
 
-import torch
-import torch.nn.functional as F
 from tqdm import tqdm
-from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
-from src.vllm_inference.data import build_dataloader
-from src.vllm_inference.vllm_infer import vllmWrapper
+
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+from src.llm_eval.processor import (
+    _init_worker,
+    merge_metrics,
+    process_split,
+    process_split_with_progress,
+    split_data,
+)
 
 
-def get_args():
-    parser = argparse.ArgumentParser(
-        description="Evaluation for training-free video temporal grounding (Single GPU Version)"
-    )
-    parser.add_argument(
-        "--datatype",
-        default="tg",
-        type=str,
-        help="Specify the dataset.",
-        choices=["tg", "mcq"],
-    )
-    parser.add_argument(
-        "--model_base", type=str, default="/data/jinsuby/time-r1/ckpts/Time-R1-7B"
-    )
-    parser.add_argument("--batch_size", type=int, default=1, help="Batch size")
-    parser.add_argument(
-        "--output_dir",
-        type=str,
-        default="checkpoints",
-        help="Directory to save checkpoints",
-    )
-    parser.add_argument(
-        "--device", type=str, default="cuda:0", help="GPU device to use"
-    )
-    parser.add_argument(
-        "--pipeline_parallel_size", type=int, default=1, help="GPU nodes"
-    )
-    parser.add_argument("--split", type=str, default="train", help="dataset type")
-    parser.add_argument("--max_new_tokens", type=int, default=128)
-    parser.add_argument("--curr_idx", type=int, default=0, help="data shard index")
-    parser.add_argument("--total_idx", type=int, default=1, help="total data shards")
-    parser.add_argument(
-        "--total_pixels", type=int, default=3584 * 28 * 28, help="total_pixels"
-    )
-    parser.add_argument(
-        "--datasets",
-        nargs="+",
-        type=str,
-        help="dataset names",
-        choices=[
-            "charades",
-            "activitynet",
-            "train_2k5",
-            "videomme",
-            "mvbench",
-            "tvgbench_filter",
-            "tvgbench",
-            "egoschema",
-            "tempcompass",
-        ],
-    )
-    parser.add_argument(
-        "--use_r1_thinking_prompt", action="store_true", help="On R1 SHOUD BE TRUE!"
-    )
-    parser.add_argument(
-        "--use_vllm_inference", action="store_true"
-    )
-    parser.add_argument("--prompt_type", type=str, default="r1", help="Prompt type")
-    parser.add_argument(
-        "--use_nothink", action="store_true", help="Use no think prompt"
-    )
-    parser.add_argument(
-        "--use_prepared_video",
-        action="store_true",
-        help="Use video cache in ./video_cache",
-    )
-    parser.add_argument(
-        "--preprocessed_data_path",
-        type=str,
-        default=None,
-        help="Path to preprocessed video features (e.g., ./dataset/coldstart/activitynet/preprocessed_data_maxpix_3584)",
-    )
-    return parser.parse_args()
+MAX_RECOMMENDED_WORKERS = 20
 
 
-def build_model(args):
-    processor = AutoProcessor.from_pretrained(args.model_base, use_fast=True)
-    if args.datatype in ["tg"]:
-        processor.tokenizer.padding_side = "left"
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", type=str, required=True, help="Path to JSON dataset")
+    ap.add_argument("--out", type=str, required=True, help="Path to save metrics JSON")
+    ap.add_argument("--out_data", type=str, default=None,
+                    help="Path to save input data with classification results added (optional)")
+    ap.add_argument("--num_splits", type=int, default=4,
+                    help="Number of parallel splits (default: 4)")
+    ap.add_argument("--num_workers", type=int, default=None,
+                    help="Number of worker processes (default: num_splits)")
+    ap.add_argument("--verbose", action="store_true", help="Show progress information")
+    args = ap.parse_args()
 
-    if (args.datatype == "tg" or (args.datatype == "mcq" and args.split != "train")) and args.use_vllm_inference:
-        # vllm inference
-        model = vllmWrapper(args)
+    # Load data
+    data_path = Path(args.data)
+    if not data_path.exists():
+        raise FileNotFoundError(f"File not found: {data_path}")
+    data = json.loads(data_path.read_text())
+
+    num_splits = max(1, args.num_splits)
+    num_workers = args.num_workers if args.num_workers is not None else num_splits
+
+    if num_workers > MAX_RECOMMENDED_WORKERS:
+        print(f"\n{'=' * 80}")
+        print(f"WARNING: {num_workers} workers is very high and may cause API rate limits.")
+        print(f"Recommended maximum: {MAX_RECOMMENDED_WORKERS} workers")
+        print(f"{'=' * 80}\n")
+
+    if num_workers == 1:
+        num_splits = 1
+
+    print(f"\n{'=' * 80}")
+    print(f"Starting parallel evaluation")
+    print(f"Total items: {len(data)}")
+    print(f"Number of splits: {num_splits}")
+    print(f"Number of workers: {num_workers}")
+    print(f"{'=' * 80}\n")
+
+    splits = split_data(data, num_splits)
+    print(f"Split sizes: {[len(s) for s in splits]}\n")
+
+    if num_workers == 1:
+        metrics_list = []
+        for idx, split in enumerate(splits):
+            metrics_list.append(process_split(split, idx, verbose=args.verbose))
     else:
-        # transformers inference
-        model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-            args.model_base,
-            torch_dtype="auto",
-            device_map=args.device,
-            attn_implementation="flash_attention_2",
-        )
-        model.eval()
+        print("Starting parallel processing...\n")
+        progress_counter = mp.Value('i', 0)
+        total_items = len(data)
 
-    return model, processor
-
-
-@torch.no_grad()
-def inference(model, inputs):
-    for key in inputs.keys():
-        if not isinstance(inputs[key], torch.Tensor):
-            continue
-        inputs[key] = inputs[key].to(model.device)
-
-    logits = model(**inputs).logits
-    bsz, seq_len, _ = logits.shape
-    if "attention_mask" in inputs:
-        pred_token_indices = torch.sum(inputs["attention_mask"], dim=-1) - 1
-    else:
-        pred_token_indices = torch.full((bsz,), seq_len - 1, device=logits.device)
-
-    pred_token_logits = logits[
-        torch.arange(bsz, device=logits.device), pred_token_indices, :
-    ]
-
-    return pred_token_logits
-
-
-def extract_answer(output_string, datatype):
-    if datatype == "tg":
-        matches = re.findall(r"(\d+\.?\d*) (to|and) (\d+\.?\d*)", output_string)
-        if not matches:
-            answer_match = re.search(r"<answer>(.*?)</answer>", output_string)
-            if answer_match:
-                answer_content = answer_match.group(1).strip()
-                answer_matches = re.findall(
-                    r"(\d+\.?\d*) (to|and) (\d+\.?\d*)", answer_content
-                )
-                if answer_matches:
-                    last_match = answer_matches[-1]
-                    return [float(last_match[0]), float(last_match[2])]
-            return [None, None]
-
-        last_match = matches[-1]
-        start_time_str = last_match[0]
-        end_time_str = last_match[2]
-
-        try:
-            start_time = float(start_time_str)
-            end_time = float(end_time_str)
-            return [start_time, end_time]
-        except ValueError:
-            return [None, None]
-
-    if datatype == "mcq":
-        matches = re.findall(r"\(([A-Z])\)", output_string)
-        if matches:
-            return ord(matches[-1]) - ord("A")
-        return None
-
-
-@torch.no_grad()
-def calc_prob(logits, options_token_ids):
-    bsz = logits.shape[0]
-    probs = []
-    for i in range(bsz):
-        logit = logits[i, options_token_ids]
-        probs.append(F.softmax(logit, dim=1))
-    return probs
-
-
-@torch.no_grad()
-def main(args):
-    os.makedirs(args.output_dir, exist_ok=True)
-    output_file = os.path.join(
-        args.output_dir, f"{args.datatype}_{args.curr_idx}_{args.total_idx}.jsonl"
-    )
-
-    already_finished = set([])
-    f = open(output_file, "a+")
-    try:
-        with open(output_file, "r") as g:
-            for line in g:
-                old_data = json.loads(line)
-                already_finished.add(old_data["qid"])
-    except Exception as e:
-        print(e)
-
-    model, processor = build_model(args)
-
-    dataloader_args = {
-        "batch_size": args.batch_size,
-        "already_finished": already_finished,
-        "curr_idx": args.curr_idx,
-        "total_idx": args.total_idx,
-        "split": args.split,
-        "num_workers": min(8, args.batch_size),
-        "dataset_names": args.datasets,
-        "use_prepared_video": args.use_prepared_video,
-        "total_pixels": args.total_pixels,
-        "use_r1_thinking_prompt": args.use_r1_thinking_prompt,
-        "prompt_type": args.prompt_type,
-        "use_nothink": args.use_nothink,
-        "preprocessed_data_path": args.preprocessed_data_path,
-    }
-
-    dataloader = build_dataloader(processor, args.datatype, **dataloader_args)
-
-    program_start_time = time.perf_counter()
-
-    for batch_itm in tqdm(dataloader):
-        if args.datatype == "tg":
-            output_texts = model.generate(
-                batch_itm["inputs"],
-                max_new_tokens=args.max_new_tokens,
-            )
-            targets = batch_itm["timestamps"]
-
-            for i in range(len(targets)):
-                pred = extract_answer(output_texts[i], args.datatype)
-                f.write(
-                    json.dumps(
-                        {
-                            "qid": batch_itm["qid"][i],
-                            "pred": pred,
-                            "target": list(targets[i]),
-                            "duration": (
-                                None
-                                if "duration" not in batch_itm
-                                else batch_itm["duration"][i]
-                            ),
-                            "output_text": output_texts[i],
-                        }
-                    )
-                    + "\n"
-                )
-                f.flush()
-        elif args.datatype == "mcq" and args.split != "train":
-            output_texts = model.generate(
-                batch_itm["inputs"],
-                max_new_tokens=args.max_new_tokens,
-                answer_prompt=dataloader.dataset.answer_prompt,
-            )
-            targets = batch_itm["answer"]
-
-            for i in range(len(targets)):
-                pred = extract_answer(output_texts[i], args.datatype)
-                f.write(
-                    json.dumps(
-                        {
-                            "qid": batch_itm["qid"][i],
-                            "pred": None,
-                            "target": targets[i],
-                            "duration": (
-                                None
-                                if "duration" not in batch_itm
-                                else batch_itm["duration"][i]
-                            ),
-                            "output_text": output_texts[i],
-                        }
-                    )
-                    + "\n"
-                )
-                f.flush()
-        else:
-            logits = inference(model, batch_itm["inputs"])
-            options_token_ids = [
-                [processor.tokenizer.vocab[word] for word in word_list]
-                for word_list in batch_itm["options"]
+        with mp.Pool(
+            processes=num_workers,
+            initializer=_init_worker,
+            initargs=(progress_counter,),
+        ) as pool:
+            async_results = [
+                pool.apply_async(process_split_with_progress, (split, idx))
+                for idx, split in enumerate(splits)
             ]
-            probs = calc_prob(logits, options_token_ids)
 
-            for i in range(len(logits)):
-                f.write(
-                    json.dumps(
-                        {
-                            "qid": batch_itm["qid"][i],
-                            "pred": probs[i].argmax().item(),
-                            "target": batch_itm["answer"][i],
-                            "duration": (
-                                None
-                                if "duration" not in batch_itm
-                                else batch_itm["duration"][i]
-                            ),
-                            "probs": probs[i].cpu().tolist(),
-                        }
-                    )
-                    + "\n"
-                )
-                f.flush()
+            with tqdm(total=total_items, desc="Processing items", ncols=100) as pbar:
+                last_value = 0
+                while any(not r.ready() for r in async_results):
+                    current_value = progress_counter.value
+                    if current_value > last_value:
+                        pbar.update(current_value - last_value)
+                        last_value = current_value
+                    time.sleep(0.1)
 
-    # --- END TOTAL TIME & CALCULATIONS ---
-    program_end_time = time.perf_counter()
-    total_program_duration = program_end_time - program_start_time
+                current_value = progress_counter.value
+                if current_value > last_value:
+                    pbar.update(current_value - last_value)
 
-    print("\n--- Timing Summary ---")
-    print(f"Total program execution time: {total_program_duration:.2f} seconds")
+            metrics_list = [r.get() for r in async_results]
 
-    output_filename = f"{args.output_dir}/timing_summary_vllm.txt"
+    # Merge and print summary
+    print(f"\n{'=' * 80}")
+    print("Merging results from all splits...")
+    merged = merge_metrics(metrics_list)
 
-    with open(output_filename, "w", encoding="utf-8") as f:
-        f.write("\n--- Timing Summary ---\n")
-        f.write(f"Total program execution time: {total_program_duration:.2f} seconds\n")
-        f.write("Another line of summary using write.\n")
+    print(f"\n{'=' * 80}")
+    print(f"Summary ({merged['num_items']} items)")
+    print(f"[Relevance] overall acc: {merged['relevance']['overall_accuracy']:.4f}")
+    print(f"[RA-IoU] mean(all): {merged['RA-IoU']['mean_all']:.4f}")
+    print(
+        f"[R@k] R@0.3: {merged['RA-IoU']['R@0.3']:.2f}% | "
+        f"R@0.5: {merged['RA-IoU']['R@0.5']:.2f}% | "
+        f"R@0.7: {merged['RA-IoU']['R@0.7']:.2f}%"
+    )
+    print(f"[RT-IoU] {merged['RT-IoU']:.4f}")
+    print(
+        f"[Irrelevant Samples] mean reasoning score: "
+        f"{merged['irrelevant_samples']['mean_reasoning_score']:.4f} | "
+        f"count: {merged['irrelevant_samples']['count']}"
+    )
+    print(
+        f"[Irrelevant Samples] mean SBERT similarity: "
+        f"{merged['irrelevant_samples']['mean_sbert_similarity']:.4f} | "
+        f"SBERT count: {merged['irrelevant_samples']['sbert_count']}"
+    )
+    print(
+        f"[True Negative Samples] mean reasoning score: "
+        f"{merged['true_negative_samples']['mean_reasoning_score']:.4f} | "
+        f"count: {merged['true_negative_samples']['count']}"
+    )
+    print(
+        f"[True Negative Samples] mean SBERT similarity: "
+        f"{merged['true_negative_samples']['mean_sbert_similarity']:.4f} | "
+        f"SBERT count: {merged['true_negative_samples']['sbert_count']}"
+    )
+
+    # Save metrics JSON (excluding updated_items)
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    metrics_to_save = {k: v for k, v in merged.items() if k != "updated_items"}
+    out_path.write_text(json.dumps(metrics_to_save, ensure_ascii=False, indent=2))
+    print(f"\nSaved metrics to: {out_path}")
+
+    # Save updated items with classification results
+    updated_items = merged.get("updated_items", [])
+    if updated_items:
+        if args.out_data:
+            out_data_path = Path(args.out_data)
+        else:
+            out_data_path = out_path.parent / f"{out_path.stem}_items{out_path.suffix}"
+
+        out_data_path.parent.mkdir(parents=True, exist_ok=True)
+        out_data_path.write_text(json.dumps(updated_items, ensure_ascii=False, indent=2))
+        print(f"Saved data with classification results to: {out_data_path}")
+        print(f"   Total items: {len(updated_items)}")
+    else:
+        print("No updated items to save")
+
+    print(f"{'=' * 80}\n")
 
 
 if __name__ == "__main__":
-    from src.vllm_inference.utils import monkey_patch
-
-    monkey_patch()
-    args = get_args()
-    if "mvbench" in args.datasets \
-        or "videomme" in args.datasets \
-        or "tempcompass" in args.datasets:
-        args.datatype = "mcq"
-    elif (
-        "tvgbench" in args.datasets \
-        or "tvgbench_filter" in args.datasets \
-        or "charades" in args.datasets \
-        or "activitynet" in args.datasets \
-        or "train_2k5" in args.datasets \
-    ):
-        args.datatype = "tg"
-    else:
-        raise ValueError("Unsupported dataset type. Please check your datasets.")
-    main(args)
+    main()
