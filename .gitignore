@@ -124,6 +124,11 @@ slurm-*.out
 # Core dumps
 core.*
 
+# Internal cleanup/migration docs (not for publication)
+CLEANUP_COMPLETE.md
+RARFT_CLEANUP_SUMMARY.md
+TRAINER_UPDATES_REQUIRED.md
+
 # Environment files with secrets
 .env
 .env.local

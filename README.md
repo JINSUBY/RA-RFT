@@ -37,8 +37,6 @@ pip install -r requirements.txt
 pip install flash-attn --no-build-isolation
 ```
 
-For detailed installation instructions, see [docs/INSTALL.md](docs/INSTALL.md).
-
 ## 📊 Dataset Preparation
 
 RA-RFT uses the High-Irrelevant Video Temporal Grounding (HI-VTG) dataset, which contains:
@@ -60,10 +58,7 @@ bash scripts/train_rarft.sh
 2. **refuse_iou**: Task-aware temporal IoU (rewards correct timestamps for answerable queries, penalizes timestamps for refusable queries)
 3. **explain_correction**: Combined reward for refusal explanation and query correction
 
-For detailed training instructions, see [docs/TRAINING.md](docs/TRAINING.md).
-
-## 📈 Inference & Evaluation
-
+## 📈 Evaluation
 The evaluation pipeline consists of two stages:
 1. **Inference**: Generate model responses for test queries
 2. **Evaluation**: Assess response quality using LLM-based metrics
@@ -143,9 +138,9 @@ Pre-trained RA-RFT models will be available on Hugging Face Hub:
 If you find this work useful for your research, please cite:
 
 ```bibtex
-@article{rarft2025,
-  title={RA-RFT: Refusal-Aware Reinforcement Fine-Tuning for Video Temporal Grounding},
-  author={[Your Name]},
+@article{lee2025learning,
+  title={Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding},
+  author={Lee, Jin-Seop and Lee, SungJoon and Jung, SeongJun and Li, Boyang and Lee, Jee-Hyong},
   journal={arXiv preprint arXiv:2511.23151},
   year={2025}
 }
@@ -156,9 +151,6 @@ If you find this work useful for your research, please cite:
 This work builds upon several excellent projects:
 
 - [Time-R1](https://github.com/xiaomi-research/time-r1): Foundation for video temporal grounding with reinforcement learning
-- [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL): Vision-language backbone model
-- [TRL](https://github.com/huggingface/trl): Transformer Reinforcement Learning library
-- [DeepSpeed](https://github.com/microsoft/DeepSpeed): Efficient distributed training
 
 ## 📄 License
 
