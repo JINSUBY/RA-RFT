@@ -63,16 +63,42 @@ The evaluation pipeline consists of two stages:
 1. **Inference**: Generate model responses for test queries
 2. **Evaluation**: Assess response quality using LLM-based metrics
 
+### Evaluation Datasets
+
+We provide three types of test datasets, each designed to assess different aspects of refusal-aware video temporal grounding:
+
+| Dataset | Type | Files |
+|---------|------|-------|
+| **HI-VTG** | Hard-Irrelevant VTG | `hi_vtg_tvgbench.json`, `hi_vtg_activitynet.json` |
+| **SS-VTG** | Simply Shuffled RA-VTG | `ss_vtg_activitynet.json` |
+| **Human-Anno** | Human Annotation RA-VTG | `human_anno.json` |
+
 ### Stage 1: Inference (Model Response Generation)
 
-Generate model responses for the HI-VTG test set (Including relevance and irrelevance queries):
+Run inference separately for each test dataset. Set `--test_data_path` and `--output_dir` accordingly per dataset:
 
 ```bash
-# Single-GPU inference
+# Example: HI-VTG (ActivityNet)
 python inference.py \
     --model_path ./ckpts/your_model \
-    --test_data_path ./dataset/anno/test.json \
-    --output_dir ./inference_output \
+    --test_data_path ./dataset/anno/hi_vtg_activitynet.json \
+    --output_dir ./inference_output/hi_vtg_activitynet \
+    --preprocessed_data_path ./dataset/preprocessed_video \
+    --batch_size 8
+
+# Example: SS-VTG
+python inference.py \
+    --model_path ./ckpts/your_model \
+    --test_data_path ./dataset/anno/ss_vtg_activitynet.json \
+    --output_dir ./inference_output/ss_vtg_activitynet \
+    --preprocessed_data_path ./dataset/preprocessed_video \
+    --batch_size 8
+
+# Example: Human Annotation
+python inference.py \
+    --model_path ./ckpts/your_model \
+    --test_data_path ./dataset/anno/human_anno.json \
+    --output_dir ./inference_output/human_anno \
     --preprocessed_data_path ./dataset/preprocessed_video \
     --batch_size 8
 
@@ -87,20 +113,37 @@ bash scripts/inference.sh
 - `--batch_size`: Batch size per GPU
 - `--curr_idx`, `--total_idx`: For manual multi-GPU data sharding
 
-**Output:** `inference_results_merged.json` containing model responses for all test samples.
+**Output:** `inference_results_merged.json` in each `--output_dir`, containing model responses for all test samples.
 
 ### Stage 2: Evaluation (LLM-based Assessment)
 
-Evaluate the generated responses using GPT-4 as a judge:
+Evaluation uses **GPT-5-mini** as a judge. Run evaluation separately for each inference output:
 
 ```bash
 # Configure your OpenAI API key
 export OPENAI_API_KEY="your-api-key"
 
-# Run LLM evaluation
+# Example: HI-VTG (ActivityNet)
 python evaluate.py \
-    --data ./inference_output/inference_results_merged.json \
-    --out ./evaluation_results/metrics.json \
+    --data ./inference_output/hi_vtg_activitynet/inference_results_merged.json \
+    --out ./evaluation_results/hi_vtg_activitynet/metrics.json \
+    --out_data ./evaluation_results/hi_vtg_activitynet/metrics_items.json \
+    --num_splits 27 \
+    --num_workers 27
+
+# Example: SS-VTG
+python evaluate.py \
+    --data ./inference_output/ss_vtg_activitynet/inference_results_merged.json \
+    --out ./evaluation_results/ss_vtg_activitynet/metrics.json \
+    --out_data ./evaluation_results/ss_vtg_activitynet/metrics_items.json \
+    --num_splits 27 \
+    --num_workers 27
+
+# Example: Human Annotation
+python evaluate.py \
+    --data ./inference_output/human_anno/inference_results_merged.json \
+    --out ./evaluation_results/human_anno/metrics.json \
+    --out_data ./evaluation_results/human_anno/metrics_items.json \
     --num_splits 27 \
     --num_workers 27
 
@@ -119,6 +162,7 @@ bash scripts/evaluation.sh
 **Key parameters:**
 - `--data`: Path to inference results (merged JSON)
 - `--out`: Output path for evaluation metrics
+- `--out_data`: Output path for per-sample evaluation details (optional; defaults to `<out_stem>_items.json`)
 - `--num_splits`: Number of data splits for parallel processing
 - `--num_workers`: Number of parallel worker processes (default: matches num_splits)
 
