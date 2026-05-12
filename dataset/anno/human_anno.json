@@ -1,0 +1,2409 @@
+[
+  {
+    "video": "../dataset/selected_videos/72LJ3.mp4",
+    "query_text": "man with a white shirt is reading a book.",
+    "timestamp": [
+      0.0,
+      15.0
+    ],
+    "duration": 24.98,
+    "GRPO": [
+      {
+        "q": "man with a white shirt is reading a book.",
+        "a": "<answer>0.0 to 15.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "A man wearing white clothes is reading a book on a chair.",
+        "a": "<answer>The man is sitting on a bed, not a chair, and reading a book.</answer><correct>man with a white shirt is reading a book.</correct>",
+        "r": false,
+        "c": [
+          "Scene/SceneExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/9RKTE.mp4",
+    "query_text": "girl on the left is talking on the phone.",
+    "timestamp": [
+      0.0,
+      26.0
+    ],
+    "duration": 26.28,
+    "GRPO": [
+      {
+        "q": "girl on the left is talking on the phone.",
+        "a": "<answer>0.0 to 26.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The girl on the left is talking on the phone in a park.",
+        "a": "<answer>TA park does not appear in the video, and the girl on the left is talking on the phone in front of a staircase in a dark indoor setting.</answer><correct>girl on the left is talking on the phone.</correct>",
+        "r": false,
+        "c": [
+          "Scene/SceneExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/DJMZC.mp4",
+    "query_text": "person lying on the bed is holding a phone.",
+    "timestamp": [
+      15.0,
+      22.0
+    ],
+    "duration": 22.32,
+    "GRPO": [
+      {
+        "q": "person lying on the bed is holding a phone.",
+        "a": "<answer>15.0 to 22.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "person standing on the bed is holding a phone.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. It describes a person standing on the bed holding a phone, but the video shows a person lying on the bed holding a phone. The action in the query does not match the video.</answer><correct>person lying on the bed is holding a phone.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/HDX87.mp4",
+    "query_text": "one girl looks out the window while another girl is eating",
+    "timestamp": [
+      3.0,
+      28.0
+    ],
+    "duration": 28.44,
+    "GRPO": [
+      {
+        "q": "one girl looks out the window while another girl is eating",
+        "a": "<answer>3.0 to 28.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "one girl looks at the mirror while another girl is eating",
+        "a": "<answer>The query seems to be inconsistent with the video: it asks for one girl looking at the mirror while another girl is eating. However, the video shows one girl lokking out the window while another girl is eating. So the object does not match.</answer><correct>one girl looks out the window while another girl is eating</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/1L220.mp4",
+    "query_text": "man is standing while eating some foods.",
+    "timestamp": [
+      73.0,
+      102.0
+    ],
+    "duration": 135.83,
+    "GRPO": [
+      {
+        "q": "man is standing while eating some foods.",
+        "a": "<answer>73.0 to 102.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man is sitting at the table while eating some foods.",
+        "a": "<answer>The query seems to be inconsistent with the video: it describes a man sitting at the table while eating foods, while the segment shows a man standing while eating foods. The action in the video does not match the query.</answer><correct>man is standing while eating some foods.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/4FTT5.mp4",
+    "query_text": "man holding a laptop is going up the stairs.",
+    "timestamp": [
+      15.0,
+      80.0
+    ],
+    "duration": 127.11,
+    "GRPO": [
+      {
+        "q": "man holding a laptop is going up the stairs.",
+        "a": "<answer>15.0 to 80.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man holding a laptop is going down the stairs.",
+        "a": "<answer>The query does not align well with the video segment: it asks for a man holding a laptop going up the stairs, while the video shows a man holding a laptop going up the stairs. The change in the direction of the movement makes the query irrelevant.</answer><correct>man holding a laptop is going up the stairs.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectMoving"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/L57L2.mp4",
+    "query_text": "woman kneels down and then folds the box.",
+    "timestamp": [
+      21.0,
+      28.0
+    ],
+    "duration": 124.06,
+    "GRPO": [
+      {
+        "q": "woman kneels down and then folds the box.",
+        "a": "<answer>21.0 to 28.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman kneels down after folding the box.",
+        "a": "<answer>The query seems to be inconsistent with the video: it now says that a woman kneels down after folding the box, but the video shows a woman kneeling down and then folding a box. The temporal order of action conflicts with the footage.</answer><correct>woman kneels down and then folds the box.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/4VYE5.mp4",
+    "query_text": "man puts down the cup and then stands up from the white chair.",
+    "timestamp": [
+      89.5,
+      101.0
+    ],
+    "duration": 157.48,
+    "GRPO": [
+      {
+        "q": "man puts down the cup and then stands up from the white chair.",
+        "a": "<answer>89.5 to 101.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man puts down the cup and then stands up from the black chair.",
+        "a": "<answer>The query does not align well with the video segment: it describes a man putting down the cup and standing up from the white chair, while the footage clearly shows a man putting down the cup and then standing up from the white chair. The color of the chair in the query does not match the video.</answer><correct>man puts down the cup and then stands up from the white chair.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/673VM.mp4",
+    "query_text": "man comes into the room and checks the camera.",
+    "timestamp": [
+      91.0,
+      150.0
+    ],
+    "duration": 178.47,
+    "GRPO": [
+      {
+        "q": "man comes into the room and checks the camera.",
+        "a": "<answer>91.0 to 150.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man comes into the room and takes a picture with camera.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. The query describes a man coming into the room and checking the camera. However, the video shows a man coming into the room and checking the camera. The action in the video does not match the query.</answer><correct>man comes into the room and checks the camera.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/PM1VD.mp4",
+    "query_text": "man reaches out for red and blue bowls while sitting on the chair.",
+    "timestamp": [
+      105.0,
+      122.0
+    ],
+    "duration": 160.68,
+    "GRPO": [
+      {
+        "q": "man reaches out for red and blue bowls while sitting on the chair.",
+        "a": "<answer>105.0 to 122.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man reaches out for red and blue bowls while standing.",
+        "a": "<answer>The query seems to be inconsistent with the video: it currently shows that a man reaches out for red and blue bowls while standing, while the footage clearly shows that a man reaches out for red and blue bowls while sitting on the chair. The action in the video does not match the query.</answer><correct>man reaches out for red and blue bowls while sitting on the chair.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/5UNDJ.mp4",
+    "query_text": "man holding a fruit and a cushion walks into the room.",
+    "timestamp": [
+      72.0,
+      87.0
+    ],
+    "duration": 194.39,
+    "GRPO": [
+      {
+        "q": "man holding a fruit and a cushion walks into the room.",
+        "a": "<answer>72.0 to 87.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man holding a book and a pen walks into the room.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. It now says that a man holding a book and a pen walking into the room, while the video shows that a man is holding some kind of fruit and a cushion while walking into the room. The objects in the query do not match the video.</answer><correct>man holding a fruit and a cushion walks into the room.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/7H0JK.mp4",
+    "query_text": "woman cleaning the floor with a broomstick.",
+    "timestamp": [
+      20.0,
+      30.0
+    ],
+    "duration": 30.95,
+    "GRPO": [
+      {
+        "q": "woman cleaning the floor with a broomstick.",
+        "a": "<answer>20.0 to 30.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman cleaning the shelf with a broomstick.",
+        "a": "<answer>The query does not align well with the video segment: it asks for a woman cleaning the shelf with a broomstick, but the video shows a woman cleaning the floor with a broomstick. So, the object does not match the video.</answer><correct>woman cleaning the floor with a broomstick.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/NQ1V6.mp4",
+    "query_text": "man with a blue shirt is watching his phone.",
+    "timestamp": [
+      0.0,
+      4.0
+    ],
+    "duration": 30.0,
+    "GRPO": [
+      {
+        "q": "man with a blue shirt is watching his phone.",
+        "a": "<answer>0.0 to 4.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with a striped shirt is watching his phone.",
+        "a": "<answer>The query seems to be inconsistent with the video: the query asks that a man with a striped shirt is watching his phone. However, the footage shows a man with a plain blue shirt watching his phone. So, the query does not match the footage.</answer><correct>man with a blue shirt is watching his phone.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/9C4JX.mp4",
+    "query_text": "man puts down the bag before drinking some kind of beverage.",
+    "timestamp": [
+      3.5,
+      23.0
+    ],
+    "duration": 34.56,
+    "GRPO": [
+      {
+        "q": "man puts down the bag before drinking some kind of beverage.",
+        "a": "<answer>3.5 to 23.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man picks up the bag after drinking some kind of beverage.",
+        "a": "<answer>The query does not align well with the video segment: it now says that a man picks up the bag after drinking some kind of berverage, while the video shows that a man puts down the bag before drinking some kind of berverage. The type of action and the temporal sequence of action does not match the video.</answer><correct>man puts down the bag before drinking some kind of beverage.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction",
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/23YS1.mp4",
+    "query_text": "woman goes up on the chair and puts the jar in the shelf.",
+    "timestamp": [
+      30.0,
+      40.5
+    ],
+    "duration": 60.28,
+    "GRPO": [
+      {
+        "q": "woman goes up on the chair and puts the jar in the shelf.",
+        "a": "<answer>30.0 to 40.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman goes up on the chair and puts the bowl in the shelf.",
+        "a": "<answer>The query does not align well with the video segment: it now asks about woman going up on the chair and putting the bowl in the shelf, whereas the segment actually shows woman going up on the chair and putting the jar in the shelf. So the referenced object are different what is shown.</answer><correct>woman goes up on the chair and puts the jar in the shelf.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/9GS13.mp4",
+    "query_text": "woman is drying her hand with a towel while sitting on the chair.",
+    "timestamp": [
+      56.0,
+      70.0
+    ],
+    "duration": 77.0,
+    "GRPO": [
+      {
+        "q": "woman is drying her hand with a towel while sitting on the chair.",
+        "a": "<answer>56.0 to 70.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman is washing the dishes while sitting on the chair.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. It asks for woman washing the dishes while sitting on the chair, but the video shows woman drying her hand with a towel while sitting on the chair, so action would not match what is visible.</answer><correct>woman is drying her hand with a towel while sitting on the chair.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction",
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/BTR60.mp4",
+    "query_text": "man wearing a black hoodie is folding and putting away the laundry.",
+    "timestamp": [
+      4.0,
+      65.5
+    ],
+    "duration": 69.64,
+    "GRPO": [
+      {
+        "q": "man wearing a black hoodie is folding and putting away the laundry.",
+        "a": "<answer>4.0 to 65.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man wearing a red hoodie is folding and putting away the laundry.",
+        "a": "<answer>This query is unrelated to the clip: it describes a man wearing red hoodie folding and putting away the laundry, while the clip shows a man wearing black hoodie folding and putting away the laundry. The color of hoodie differ from what is visible.</answer><correct>man wearing a black hoodie is folding and putting away the laundry.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/00ZCA.mp4",
+    "query_text": "man plugs in and cleans the floor with a vacuum cleaner.",
+    "timestamp": [
+      28.0,
+      53.0
+    ],
+    "duration": 92.92,
+    "GRPO": [
+      {
+        "q": "man plugs in and cleans the floor with a vacuum cleaner.",
+        "a": "<answer>28.0 to 53.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man plugs in after cleaning the floor with a vacuum cleaner.",
+        "a": "<answer>The query does not align well with the video segment: it now says that a man plugs in after cleaning the floor with vacuum cleaner. However, the video shows man plugs in and then cleans the floor with a vacuum cleaner, so the action sequence does not match the video.</answer><correct>man plugs in and cleans the floor with a vacuum cleaner.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/EYQ6U.mp4",
+    "query_text": "woman leaning back on the bed is drinking and eating.",
+    "timestamp": [
+      74.0,
+      100.5
+    ],
+    "duration": 108.13,
+    "GRPO": [
+      {
+        "q": "woman leaning back on the bed is drinking and eating.",
+        "a": "<answer>74.0 to 100.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman leaning back on the bed is drinking and reading.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. It asks that a woman leaning back on the bed drinking and reading, wherease the clip shows woman leaning back on the bed drinking and eating. So, the action does not match the video.</answer><correct>woman leaning back on the bed is drinking and eating.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/RF00I.mp4",
+    "query_text": "woman is talking on the phone while eating food.",
+    "timestamp": [
+      18.0,
+      40.5
+    ],
+    "duration": 101.9,
+    "GRPO": [
+      {
+        "q": "woman is talking on the phone while eating food.",
+        "a": "<answer>18.0 to 40.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman is talking on the phone while drinking water.",
+        "a": "<answer>The query does not align well with the video: it requests woman talking on the phone while drinking water, whereas the segment shows woman talking on the phone while eating food. Both action and object differ from what is visible, so the woman is not drinking water.</answer><correct>woman is talking on the phone while eating food.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction",
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_JHKAcpYlxkQ.mp4",
+    "query_text": "woman is practicing tennis.",
+    "timestamp": [
+      0.0,
+      17.2
+    ],
+    "duration": 17.23,
+    "GRPO": [
+      {
+        "q": "woman is practicing tennis.",
+        "a": "<answer>0.0 to 17.2</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman is practicing baseball.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. The query asks for woman practicing baseball while the segment shows woman practicing tennis, so the action does not match.</answer><correct>woman is practicing tennis.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_bF2qGYgqJuM.mp4",
+    "query_text": "man with a white shirt is doing a discus throw.",
+    "timestamp": [
+      0.0,
+      8.3
+    ],
+    "duration": 8.34,
+    "GRPO": [
+      {
+        "q": "man with a white shirt is doing a discus throw.",
+        "a": "<answer>0.0 to 8.3</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with a black shirt is doing a discus throw.",
+        "a": "<answer>The query does not align well with the video: it says that a man with a black shirt is doing a discus throw, whereas the video shows a man with a white shirt is doing a discus throw. The color of shirt does not match the video.</answer><correct>man with a white shirt is doing a discus throw.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_z4_gDZk7z3s.mp4",
+    "query_text": "person in the back is bouncing the ball while running.",
+    "timestamp": [
+      3.5,
+      8.0
+    ],
+    "duration": 20.72,
+    "GRPO": [
+      {
+        "q": "person in the back is bouncing the ball while running.",
+        "a": "<answer>3.5 to 8.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "person in the front is bouncing the ball while running.",
+        "a": "<answer>The query seems to be inconsistent with the video: the query asks if a person in the front is bouncing the ball while running, whereas the clip shows person in the back is bouncing the ball while running. The spatial relation between object is not matched with the video.</answer><correct>person in the back is bouncing the ball while running.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectSpatialRelation"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_APQWGGPPjes.mp4",
+    "query_text": "man in the white suit and a yellow tie is doing an interview.",
+    "timestamp": [
+      119.0,
+      134.0
+    ],
+    "duration": 149.52,
+    "GRPO": [
+      {
+        "q": "man in the white suit and a yellow tie is doing an interview.",
+        "a": "<answer>119.0 to 134.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man in the white suit and a purple tie is doing an interview.",
+        "a": "<answer>The query seems to have some inconsistencies with the video. It now says that man in the white suit and a purple tie is doing an interview, however, the segment shows that man in the white suit and yellow tie is doing an interview. So, the color of the tie does not match.</answer><correct>man in the white suit and a yellow tie is doing an interview.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_ARpoJIBF2NM.mp4",
+    "query_text": "man wearing an orange shirt and two people with blue shirt are pointing at each other.",
+    "timestamp": [
+      123.0,
+      128.5
+    ],
+    "duration": 132.47,
+    "GRPO": [
+      {
+        "q": "man wearing an orange shirt and two people with blue shirt are pointing at each other.",
+        "a": "<answer>123.0 to 128.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man wearing an orange shirt and two people with blue shirt are throwing balls at each other.",
+        "a": "<answer>The query seems to be inconsistent with the video: the query says that man wearing an orange shirt and two people with blue shirt are throwing balls at each other. However, the video shows that man wearing an orange shirt and two people with blue shirt are pointing at each other. The action does not match.</answer><correct>man wearing an orange shirt and two people with blue shirt are pointing at each other.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_1FxlkazrYaY.mp4",
+    "query_text": "man with goggles and yellow gloves is explaining something while kneeling down.",
+    "timestamp": [
+      75.5,
+      97.0
+    ],
+    "duration": 158.53,
+    "GRPO": [
+      {
+        "q": "man with goggles and yellow gloves is explaining something while kneeling down.",
+        "a": "<answer>75.5 to 97.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with goggles and pink gloves is explaining something while kneeling down.",
+        "a": "<answer>The query does not align well with the video: it says that man with goggles and pink gloves is explaining something while kneeling down, while the clip shows that man with goggles and yellow gloves is explaining something while kneeling down. Sp, the color of gloves does not match the video.</answer><correct>man with goggles and yellow gloves is explaining something while kneeling down.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_tdJS3WJjeVo.mp4",
+    "query_text": "man wearing sunglasses and yellow shirt is flying two kites at the same time.",
+    "timestamp": [
+      28.0,
+      32.0
+    ],
+    "duration": 175.07,
+    "GRPO": [
+      {
+        "q": "man wearing sunglasses and yellow shirt is flying two kites at the same time.",
+        "a": "<answer>28.0 to 32.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man wearing sunglasses and yellow shirt is sitting on a hammock.",
+        "a": "<answer>This query does not align well with the video segment. The footage shows man wearing sunglasses and yellow shirt is flying two kites at the same time, but the query requires the man to be sitting on a hammock. Described action in the query does not match the action that the man wearing sunglasses and yellow shirt is doing in the video.</answer><correct>man wearing sunglasses and yellow shirt is flying two kites at the same time.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction",
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_SNJgJB2PGdI.mp4",
+    "query_text": "woman finishes dancing and walks out of the room.",
+    "timestamp": [
+      182.5,
+      189.5
+    ],
+    "duration": 189.56,
+    "GRPO": [
+      {
+        "q": "woman finishes dancing and walks out of the room.",
+        "a": "<answer>182.5 to 189.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman starts dancing while walking out of the room.",
+        "a": "<answer>The query seems to be inconsistent with the video: the video segment shows a woman finishes dancing and then walks out of the room, while the query asks woman starts dancing while walking out of the room. No interval presents the actions in this order.</answer><correct>woman finishes dancing and walks out of the room.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence",
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_pYaZLHpl_Ww.mp4",
+    "query_text": "woman explains how to wrap a bottle of liquor as a gift.",
+    "timestamp": [
+      4.0,
+      31.0
+    ],
+    "duration": 197.46,
+    "GRPO": [
+      {
+        "q": "woman explains how to wrap a bottle of liquor as a gift.",
+        "a": "<answer>4.0 to 31.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman unwraps a bottle of liquor she received as a gift.",
+        "a": "<answer>There is a mismatch between the query and the footage. The query asks about woman unwrapping a bottle of liquor she received as a gift, but the material shows woman explaining how to wrap a bottle of liquor as a gift, so no part of the footage satisfies this action.</answer><correct>woman explains how to wrap a bottle of liquor as a gift.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_dRF1C_sBE5M.mp4",
+    "query_text": "woman in a pink shirt is successfully chopping the woods after listening to man's explanation.",
+    "timestamp": [
+      156.0,
+      227.0
+    ],
+    "duration": 227.09,
+    "GRPO": [
+      {
+        "q": "woman in a pink shirt is successfully chopping the woods after listening to man's explanation.",
+        "a": "<answer>156.0 to 227.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman in a pink shirt is struggling to chop the woods even after the man's explanation.",
+        "a": "<answer>There are some inconsistencies between the query and the video. The segment shows woman in a pink shirt successfully chopping the woods after listening to man's explanation. However, the query states that she is struggling even after his explanation, which contradicts the visual evidence. Therefore, the query is irrelevant to the video content.</answer><correct>woman in a pink shirt is successfully chopping the woods after listening to man's explanation.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_nI6l7BP0odw.mkv",
+    "query_text": "man is playing an instrument in front of the crowd.",
+    "timestamp": [
+      0.0,
+      232.0
+    ],
+    "duration": 232.97,
+    "GRPO": [
+      {
+        "q": "man is playing an instrument in front of the crowd.",
+        "a": "<answer>0.0 to 232.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The crowd in the back move from right to left.",
+        "a": "<answer>There is a subtle mismatch between the query and the footage. The crowd in the back move from left to right, not from right to left.</answer><correct>man is playing an instrument in front of the crowd.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectMoving"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_L7kozALmUSY.mp4",
+    "query_text": "man is cleaning snow on the truck with a green snow broom.",
+    "timestamp": [
+      51.0,
+      131.0
+    ],
+    "duration": 250.22,
+    "GRPO": [
+      {
+        "q": "man is cleaning snow on the truck with a green snow broom.",
+        "a": "<answer>51.0 to 131.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The man clears the snow from the front steps of the house and then goes to the road to clear the snow off the truck.",
+        "a": "<answer>There is a subtle mismatch between the query and the footage. The man clears the snow off the truck and then moves to the front steps to clear snow there. The query has the scene order reversed.</correct>",
+        "r": false,
+        "c": [
+          "Scene/SceneTransition"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_MdFHY1UBH5w.mkv",
+    "query_text": "man with a necklace is wearing his shoes.",
+    "timestamp": [
+      87.0,
+      196.0
+    ],
+    "duration": 265.81,
+    "GRPO": [
+      {
+        "q": "man with a necklace is wearing his shoes.",
+        "a": "<answer>87.0 to 196.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with a necklace is taking off his shoes.",
+        "a": "<answer>The query seems to be inconsistent with the video: the query asks a man with a necklace taking off his shoes, while the video shows the man wearing his shoes. The action does not match the video.</answer><correct>man with a necklace is wearing his shoes.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v__jIXs7AFTxw.mp4",
+    "query_text": "man with a white shirt is tying his shoelaces.",
+    "timestamp": [
+      207.0,
+      272.0
+    ],
+    "duration": 285.73,
+    "GRPO": [
+      {
+        "q": "man with a white shirt is tying his shoelaces.",
+        "a": "<answer>207.0 to 272.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with a brown shirt is tying his shoelaces.",
+        "a": "<answer>There is a mismatch between the query and what the segment shows. The query states that a man with a brown shirt is tying his shoelaces, but the segment depicts man with a white shirt tying shoelaces, so no part of the video shows a brown shirt.</answer><correct>man with a white shirt is tying his shoelaces.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_CUU2_Msh7YU.mkv",
+    "query_text": "a ride-on lawn mower moves forward without anyone riding it.",
+    "timestamp": [
+      0.0,
+      33.0
+    ],
+    "duration": 33.77,
+    "GRPO": [
+      {
+        "q": "a ride-on lawn mower moves forward without anyone riding it.",
+        "a": "<answer>0.0 to 33.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "A ride-on lawn mower moves backward with a person on it.",
+        "a": "<answer>This query does not align well with the video segment. There is no one riding the ride-on lawn mower, and it is moving forward, not backward.</answer><correct>a ride-on lawn mower moves forward without anyone riding it.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence",
+          "Object/ObjectMoving"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_F035AUh0mSA.mp4",
+    "query_text": "a woman accidentally drops a stick while spinning it.",
+    "timestamp": [
+      10.0,
+      16.0
+    ],
+    "duration": 36.9,
+    "GRPO": [
+      {
+        "q": "a woman accidentally drops a stick while spinning it.",
+        "a": "<answer>10.0 to 16.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "a woman accidentally drops a ball while spinning it.",
+        "a": "<answer>There is a subtle mismatch between the query and the footage. The segment shows a woman accidentally dropping a stick while spinning it, however the query is about woman dropping a ball. There is no ball visible in the video.</answer><correct>a woman accidentally drops a stick while spinning it.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_p7TUDtxbz4c.mp4",
+    "query_text": "women's shot put athletes are taking their turns in competition.",
+    "timestamp": [
+      0.0,
+      80.0
+    ],
+    "duration": 86.32,
+    "GRPO": [
+      {
+        "q": "women's shot put athletes are taking their turns in competition.",
+        "a": "<answer>0.0 to 80.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "women's javelin throw athletes are taking their turns in competition.",
+        "a": "<answer>This query does not align well with the video segment. The video shows woman shot put athletes taking their turn in competition, not woman javelin throw athletes.</answer><correct>women's shot put athletes are taking their turns in competition.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_lGldNWWnjzQ.mp4",
+    "query_text": "kid got hit by the head of a dragon-shaped kite.",
+    "timestamp": [
+      68.0,
+      73.0
+    ],
+    "duration": 89.63,
+    "GRPO": [
+      {
+        "q": "kid got hit by the head of a dragon-shaped kite.",
+        "a": "<answer>68.0 to 73.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "kid runs while holding a dragon-shaped kite.",
+        "a": "<answer>The query seems to have some inconsistencies with the video: it asks about kid running while holding a dragon-shaped kite, but the footage shows kid getting hit by a dragon-shaped kite. No action of kid running while holding dragon-shaped kite is shown.</answer><correct>kid got hit by the head of a dragon-shaped kite.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_COThs7Ab2Do.mp4",
+    "query_text": "man leans closely to the water surface while wakeboarding.",
+    "timestamp": [
+      27.0,
+      31.0
+    ],
+    "duration": 112.61,
+    "GRPO": [
+      {
+        "q": "man leans closely to the water surface while wakeboarding.",
+        "a": "<answer>27.0 to 31.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man falls into the water while wakeboarding.",
+        "a": "<answer>There is a subtle mismatch between the query and the footage. The footage shows that a man doing a wakeboard and leaning closely to the water surface while doing it. There is no segment that shows man falling into the water while wakeboarding.</answer><correct>man leans closely to the water surface while wakeboarding.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/v_T3dcZ5GT1qQ.mkv",
+    "query_text": "woman is looking at her phone while exercising on a stepper.",
+    "timestamp": [
+      42.5,
+      50.5
+    ],
+    "duration": 95.06,
+    "GRPO": [
+      {
+        "q": "woman is looking at her phone while exercising on a stepper.",
+        "a": "<answer>42.5 to 50.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "A scene shows a person running down a mountain, followed by a scene of the person riding a bicycle.",
+        "a": "<answer>The scene of the person riding a bicycle appears first, followed by a scene of the person running down the mountain path.</answer><correct>woman is looking at her phone while exercising on a stepper.</correct>",
+        "r": false,
+        "c": [
+          "Scene/SceneTransition"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/CHglPEIQA6Q.mp4",
+    "query_text": "man is wrapping sausages with a pancake.",
+    "timestamp": [
+      24.5,
+      39.0
+    ],
+    "duration": 64.56,
+    "GRPO": [
+      {
+        "q": "man is wrapping sausages with a pancake.",
+        "a": "<answer>24.5 to 39.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man is wrapping bacons with a pancake.",
+        "a": "<answer>There is a subtle mismatch between the query and the video. The video shows a man talking and then wrapping sausages with a pancake, while the query asks about man wrapping bacons with a pancake. The object does not match.</answer><correct>man is wrapping sausages with a pancake.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/DjNdPVWYGLg.mp4",
+    "query_text": "man on the right turns his head and looks at the woman on the left.",
+    "timestamp": [
+      7.5,
+      12.0
+    ],
+    "duration": 27.59,
+    "GRPO": [
+      {
+        "q": "man on the right turns his head and looks at the woman on the left.",
+        "a": "<answer>7.5 to 12.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man on the left turns his head and looks at the woman on the right.",
+        "a": "<answer>The query seems to have some inconsistencies with the video: it asks about man on the left turning his head and looking at the woman on the right, but the footage shows man on the right turning his head and looking at the woman on the left. People's spatial relation does not match the video.</answer><correct>man on the right turns his head and looks at the woman on the left.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectSpatialRelation"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/JxFncQju1qc.mp4",
+    "query_text": "woman is showing how to make a frosting rose on a cupcake.",
+    "timestamp": [
+      32.0,
+      121.0
+    ],
+    "duration": 131.33,
+    "GRPO": [
+      {
+        "q": "woman is showing how to make a frosting rose on a cupcake.",
+        "a": "<answer>32.0 to 121.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman is eating a cupcake with a frosting rose.",
+        "a": "<answer>There is a subtle mismatch between the query and the video content; the described activity does not match what is shown. The video depicts woman showing how to make a frosting rose on a cupcake, rather than eating cupcake.</answer><correct>woman is showing how to make a frosting rose on a cupcake.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/qCeFaLPnB3w.mp4",
+    "query_text": "a person demonstrates how to draw a Converse shoe.",
+    "timestamp": [
+      3.0,
+      112.5
+    ],
+    "duration": 120.72,
+    "GRPO": [
+      {
+        "q": "a person demonstrates how to draw a Converse shoe.",
+        "a": "<answer>3.0 to 112.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "a person demonstrates how to draw a boot.",
+        "a": "<answer>The query does not align well with the video segment: it asks about person demostrating how to draw a boot, however the segment shows a person showing how to draw a Converse shoe. There is no boot visible in the video.</answer><correct>a person demonstrates how to draw a Converse shoe.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/JNWbL9R0o0g.mp4",
+    "query_text": "man with glasses shows how to tune up a handsaw.",
+    "timestamp": [
+      63.0,
+      149.0
+    ],
+    "duration": 160.12,
+    "GRPO": [
+      {
+        "q": "man with glasses shows how to tune up a handsaw.",
+        "a": "<answer>63.0 to 149.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with glasses shows how to tune up a knife.",
+        "a": "<answer>This query does not align well with the video. The video shows a man with glasses showing how to tune up a handsaw, while the query asks about tuning up a knife. There is no knife visible in the video.</answer><correct>man with glasses shows how to tune up a handsaw.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/Y6MFVW664cg.mp4",
+    "query_text": "man holding a cup of tea is speaking, and then drinks the tea.",
+    "timestamp": [
+      131.0,
+      175.0
+    ],
+    "duration": 178.17,
+    "GRPO": [
+      {
+        "q": "man holding a cup of tea is speaking, and then drinks the tea.",
+        "a": "<answer>131.0 to 175.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man holding a cup of tea is speaking, and then spills the tea.",
+        "a": "<answer>There is a subtle mismatch between the query and the video content; the described activity does not match what is shown. The video shows man holding a cup of tea spaking and then drinking the tea, rather than spilling it.</answer><correct>man holding a cup of tea is speaking, and then drinks the tea.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/9kKRdlAFuZw.mp4",
+    "query_text": "man wearing a white shirt lights up a gas stove.",
+    "timestamp": [
+      138.0,
+      145.0
+    ],
+    "duration": 192.27,
+    "GRPO": [
+      {
+        "q": "man wearing a white shirt lights up a gas stove.",
+        "a": "<answer>138.0 to 145.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man wearing a check shirt lights up a gas stove.",
+        "a": "<answer>This query does not align well with the video segment. The query says man wearing a check shirt lights up a gas stove, however the video segment shows a man with a white shirt. The attribute of shirt does not match the video.</answer><correct>man wearing a white shirt lights up a gas stove.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/mSsK1U9uZRw.mp4",
+    "query_text": "person puts spinach and black beans into a blender.",
+    "timestamp": [
+      71.0,
+      105.0
+    ],
+    "duration": 193.93,
+    "GRPO": [
+      {
+        "q": "person puts spinach and black beans into a blender.",
+        "a": "<answer>71.0 to 105.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "person puts strawberry and banana into a blender.",
+        "a": "<answer>The query seems to have some inconsistencies with the video: it asks about person putting strawberry and banana into a blender, whereas the video shows person putting spinach and black beans into a blender. No strawberry and banana are shown in the video.</answer><correct>person puts spinach and black beans into a blender.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/0G5oAxg_wto.mp4",
+    "query_text": "person is showing how to attach a screen protector to a phone.",
+    "timestamp": [
+      31.0,
+      160.0
+    ],
+    "duration": 210.18,
+    "GRPO": [
+      {
+        "q": "person is showing how to attach a screen protector to a phone.",
+        "a": "<answer>31.0 to 160.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "person is showing how to attach a screen protector to a tablet.",
+        "a": "<answer>There is a subtle mismatch between the query and the video content; object does not match what is shown. The video shows a person showing how to attach a screen protector to a phone, not a tablet.</answer><correct>person is showing how to attach a screen protector to a phone.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/K79zW7X4lT0.mp4",
+    "query_text": "man is dicing a carrot.",
+    "timestamp": [
+      132.0,
+      178.0
+    ],
+    "duration": 216.97,
+    "GRPO": [
+      {
+        "q": "man is dicing a carrot.",
+        "a": "<answer>132.0 to 178.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man is dicing an onion.",
+        "a": "<answer>This query does not align well with the video footage. The query asks about man dicing an onion, while the footage shows a man sicing a carrot. There is no onion visible in the footage.</answer><correct>man is dicing a carrot.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/K_tad4NIXLQ.mp4",
+    "query_text": "woman colors a white flower with red spray.",
+    "timestamp": [
+      80.0,
+      131.0
+    ],
+    "duration": 256.39,
+    "GRPO": [
+      {
+        "q": "woman colors a white flower with red spray.",
+        "a": "<answer>80.0 to 131.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman colors a white flower with blue spray.",
+        "a": "<answer>The query seems to have inconsistency with the video: video shows woman coloring a white flower with red spray, there is no blue spray. The color of spray does not match the video.</answer><correct>woman colors a white flower with red spray.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/N6qvgNMT2JU.mp4",
+    "query_text": "man is stir-frying garlic, onion and spinach in one pot.",
+    "timestamp": [
+      27.0,
+      90.0
+    ],
+    "duration": 259.68,
+    "GRPO": [
+      {
+        "q": "man is stir-frying garlic, onion and spinach in one pot.",
+        "a": "<answer>27.0 to 90.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man is stir-frying garlic, onion and spinach in a pan.",
+        "a": "<answer>There is a subtle mismatch between the query and the video. The man is stir-frying garlic, onion, and spinach, but he is using a pot rather than a pan as described in the query. The object does not match the query.</answer><correct>man is stir-frying garlic, onion and spinach in one pot.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/7uOnV8_nfXs.mp4",
+    "query_text": "a person is gluing mosaic tiles to a brick.",
+    "timestamp": [
+      53.5,
+      99.5
+    ],
+    "duration": 275.41,
+    "GRPO": [
+      {
+        "q": "a person is gluing mosaic tiles to a brick.",
+        "a": "<answer>53.5 to 99.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "a person is gluing mosaic tiles to a paper.",
+        "a": "<answer>There is a subtle mismatch between the query and the video. In the video, a person is gluing mosaic tiles to a brick, not a paper. The object in the query does not match the video.</answer><correct>a person is gluing mosaic tiles to a brick.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/g-2eokW8ttw.mp4",
+    "query_text": "man pours mixed ingredients into a white bowl.",
+    "timestamp": [
+      176.0,
+      190.0
+    ],
+    "duration": 276.51,
+    "GRPO": [
+      {
+        "q": "man pours mixed ingredients into a white bowl.",
+        "a": "<answer>176.0 to 190.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man pours mixed ingredients into a blue bowl.",
+        "a": "<answer>This query does not align well with the video footage. The footage depicts a man pouring mixed ingredients into a white bowl, not a blue bowl. The color of the bowl is different from what is shown.</answer><correct>man pours mixed ingredients into a white bowl.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/IK7eDWujdq0.mp4",
+    "query_text": "a man is showing water crystals in a pink bucket.",
+    "timestamp": [
+      7.0,
+      16.0
+    ],
+    "duration": 39.2,
+    "GRPO": [
+      {
+        "q": "a man is showing water crystals in a pink bucket.",
+        "a": "<answer>7.0 to 16.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "a man is showing water crystals in a green bucket.",
+        "a": "<answer>This query does not align well with the video. The video depicts man showing water crystals in a pink bucket, not a green bucket. The color of bucket does not match the video.</answer><correct>a man is showing water crystals in a pink bucket.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/zbggf9rjORk.mp4",
+    "query_text": "woman is showing how to tie a shoe step by step",
+    "timestamp": [
+      20.0,
+      54.0
+    ],
+    "duration": 58.12,
+    "GRPO": [
+      {
+        "q": "woman is showing how to tie a shoe step by step",
+        "a": "<answer>20.0 to 54.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman is showing how to clean a shoe step by step",
+        "a": "<answer>The query seems to have inconsistency with the video: The query asks about woman showing how to clean a shoe step by step, while the video shows woman showing how to tie a shoe step by step. The action does not match the video.</answer><correct>woman is showing how to tie a shoe step by step</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/FOSNif19b1k.mp4",
+    "query_text": "woman is demonstrating how to assemble a sugar flower",
+    "timestamp": [
+      10.0,
+      76.0
+    ],
+    "duration": 79.04,
+    "GRPO": [
+      {
+        "q": "woman is demonstrating how to assemble a sugar flower",
+        "a": "<answer>10.0 to 76.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man is demonstrating how to assemble a sugar flower",
+        "a": "<answer>There is a subtle mismatch between the query and the video. In the video, a woman is demonstrating how to assemble a sugar flower, not man. The gender of the person in the video does not match the query.</answer><correct>woman is demonstrating how to assemble a sugar flower</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/yXkkdTVB6QY.mp4",
+    "query_text": "a man is painting the side of a wooden shelf with white paint.",
+    "timestamp": [
+      0.0,
+      72.0
+    ],
+    "duration": 72.77,
+    "GRPO": [
+      {
+        "q": "a man is painting the side of a wooden shelf with white paint.",
+        "a": "<answer>0.0 to 72.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "A man is painting the side of a wooden shelf with white paint outdoors.",
+        "a": "<answer>This query does not align well with the video. The man is painting the wooden shelf indoors, not outdoors.</answer><correct>a man is painting the side of a wooden shelf with white paint.</correct>",
+        "r": false,
+        "c": [
+          "Scene/SceneExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/15hqoR0KJHA.mp4",
+    "query_text": "person is showing how to tie a knot with red and white threads.",
+    "timestamp": [
+      4.0,
+      101.0
+    ],
+    "duration": 106.81,
+    "GRPO": [
+      {
+        "q": "person is showing how to tie a knot with red and white threads.",
+        "a": "<answer>4.0 to 101.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "person is showing how to tie a knot with blue and white threads.",
+        "a": "<answer>This query does not align well with the video. In the video, a person is showing how to tie a knot with read and white threads, while the query describes blue and white threads. The color of thread does not match.</answer><correct>person is showing how to tie a knot with red and white threads.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/5RfgDheHbBg.mp4",
+    "query_text": "The person on the right gets hit by the hand of the person on the left.",
+    "timestamp": [
+      84.0,
+      89.0
+    ],
+    "duration": 112.36,
+    "GRPO": [
+      {
+        "q": "The person on the right gets hit by the hand of the person on the left.",
+        "a": "<answer>84.0 to 89.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The person on the left gets hit by the hand of the person on the right.",
+        "a": "<answer>This query does not align with the video. In the video, the person on the right is hit by the hand of the person on the left, while the query states that the person on the left gets hit by the right person. The direction of the action is reversed, making the query inconsistent with the event.</answer><correct>The person on the right gets hit by the hand of the person on the left.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectSpatialRelation"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s21-d27-cam-002.avi",
+    "query_text": "woman cleans up the onion peels.",
+    "timestamp": [
+      112.0,
+      124.0
+    ],
+    "duration": 126.43,
+    "GRPO": [
+      {
+        "q": "woman cleans up the onion peels.",
+        "a": "<answer>112.0 to 124.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman cleans up the carrot peels.",
+        "a": "<answer>This query does not align well with the video. In the video, the woman is cleaning up onion peels, while the query mentions carrot peels. The type of ingredient being cleaned up is different, making the query inconsistent with the video content.</answer><correct>woman cleans up the onion peels.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s25-d23-cam-002.avi",
+    "query_text": "The person gets a carrot from the refrigerator and a cutting board and knife to begin preparation.",
+    "timestamp": [
+      3.0,
+      22.5
+    ],
+    "duration": 129.52,
+    "GRPO": [
+      {
+        "q": "The person gets a carrot from the refrigerator and a cutting board and knife to begin preparation.",
+        "a": "<answer>3.0 to 22.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The person gets a tomato from the refrigerator and a cutting board and knife to begin preparation.",
+        "a": "<answer>There is a subtle mismatch between the query and the video segment. The segment shows person getting out a carrot from the refrigerator and a cutting board and knife, while the query asks about tomato. The object does not match.</answer><correct>The person gets a carrot from the refrigerator and a cutting board and knife to begin preparation.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s23-d34-cam-002.avi",
+    "query_text": "a man cuts off a piece of ginger and puts the rest back in the cupboard.",
+    "timestamp": [
+      41.0,
+      53.0
+    ],
+    "duration": 177.93,
+    "GRPO": [
+      {
+        "q": "a man cuts off a piece of ginger and puts the rest back in the cupboard.",
+        "a": "<answer>41.0 to 53.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "a man cuts off a piece of ginger and leaves the rest on the counter.",
+        "a": "<answer>The query does not accurately describe the video. In the video, the man cuts off a piece of ginger and puts the remaining piece back in the cupboard, whereas the query says he leaves it on the counter. The final action differs, making the query inconsistent with the video.</answer><correct>a man cuts off a piece of ginger and puts the rest back in the cupboard.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s25-d27-cam-002.avi",
+    "query_text": "man washes the onions and then chops them.",
+    "timestamp": [
+      75.5,
+      155.0
+    ],
+    "duration": 157.01,
+    "GRPO": [
+      {
+        "q": "man washes the onions and then chops them.",
+        "a": "<answer>75.5 to 155.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man chops the onions and then washes them.",
+        "a": "<answer>The query does not accurately describe the video. The video shows a man washing onions and then chopping them, while the query describes the opposite order. The action sequence is reversed.</answer><correct>man washes the onions and then chops them.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s26-d68-cam-002.avi",
+    "query_text": "man grates a carrot over a steel bowl.",
+    "timestamp": [
+      109.0,
+      178.0
+    ],
+    "duration": 182.65,
+    "GRPO": [
+      {
+        "q": "man grates a carrot over a steel bowl.",
+        "a": "<answer>109.0 to 178.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man grates a potato over a steel bowl.",
+        "a": "<answer>In the video, a man is grating a carrot, not potato, over a steel bowl. The object does not match the video.</answer><correct>man grates a carrot over a steel bowl.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s29-d29-cam-002.avi",
+    "query_text": "man washes the vegetables before slicing them.",
+    "timestamp": [
+      50.5,
+      65.0
+    ],
+    "duration": 197.04,
+    "GRPO": [
+      {
+        "q": "man washes the vegetables before slicing them.",
+        "a": "<answer>50.5 to 65.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man washes the vegetables after slicing them.",
+        "a": "<answer>This query does not align well with the video footage. The footage shows a man slicing vegetables and then washing them, while the query asks about man washing vegetables after slicing them. The action sequence is reversed.</answer><correct>man washes the vegetables before slicing them.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s14-d36-cam-002.avi",
+    "query_text": "woman cleans a grater with a red brush.",
+    "timestamp": [
+      214.0,
+      232.0
+    ],
+    "duration": 235.27,
+    "GRPO": [
+      {
+        "q": "woman cleans a grater with a red brush.",
+        "a": "<answer>214.0 to 232.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman cleans a grater with a yellow brush.",
+        "a": "<answer>The video shows woman is cleaning a grater with a red brush, not yellow brush.</answer><correct>woman cleans a grater with a red brush.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s24-d40-cam-002.avi",
+    "query_text": "woman walks to the refrigerator and takes out a package of limes.",
+    "timestamp": [
+      7.5,
+      15.0
+    ],
+    "duration": 215.03,
+    "GRPO": [
+      {
+        "q": "woman walks to the refrigerator and takes out a package of limes.",
+        "a": "<answer>7.5 to 15.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman walks to the cupboard and takes out a package of limes.",
+        "a": "<answer>The footage depicts woman walks to the refrigerator, not cupboard, and takes out a package of limes. The object does not match.</answer><correct>woman walks to the refrigerator and takes out a package of limes.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s14-d32-cam-002.avi",
+    "query_text": "woman throws away the peels after peeling the vegetable.",
+    "timestamp": [
+      245.0,
+      257.0
+    ],
+    "duration": 259.32,
+    "GRPO": [
+      {
+        "q": "woman throws away the peels after peeling the vegetable.",
+        "a": "<answer>245.0 to 257.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman throws away the peels before peeling the vegetable.",
+        "a": "<answer>The query does not accurately describe the video. In the video, the woman throws away the peels after peeling the vegetable, but the query states she throws them away before peeling. The order of actions is reversed.</answer><correct>woman throws away the peels after peeling the vegetable.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s33-d45-cam-002.avi",
+    "query_text": "The person cuts the red pepper into large slices.",
+    "timestamp": [
+      48.0,
+      69.5
+    ],
+    "duration": 261.84,
+    "GRPO": [
+      {
+        "q": "The person cuts the red pepper into large slices.",
+        "a": "<answer>48.0 to 69.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The person cuts the green pepper into large slices.",
+        "a": "<answer>The video segment shows person cutting the red pepper, not the green pepper, into large slices. The color of pepper does not match.</answer><correct>The person cuts the red pepper into large slices.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s15-d70-cam-002.avi",
+    "query_text": "woman takes one orange out of the refrigerator.",
+    "timestamp": [
+      7.5,
+      17.0
+    ],
+    "duration": 282.82,
+    "GRPO": [
+      {
+        "q": "woman takes one orange out of the refrigerator.",
+        "a": "<answer>7.5 to 17.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman takes three orange out of the refrigerator.",
+        "a": "<answer>The video shows the woman taking one orange out of the refrigerator, while the query states that she takes three. The quantity of oranges is different.</answer><correct>woman takes one orange out of the refrigerator.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/Counting"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s34-d63-cam-002.avi",
+    "query_text": "man washes a white dish and places toasts on it.",
+    "timestamp": [
+      240.0,
+      261.0
+    ],
+    "duration": 272.35,
+    "GRPO": [
+      {
+        "q": "man washes a white dish and places toasts on it.",
+        "a": "<answer>240.0 to 261.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man washes a white dish after placing toasts on it.",
+        "a": "<answer>The video shows a man washing a white dish and then placing toasts on it, not washing the dish after placing toasts. The order of action is reversed.</answer><correct>man washes a white dish and places toasts on it.</correct>",
+        "r": false,
+        "c": [
+          "Action/ActionSequence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s14-d61-cam-002.avi",
+    "query_text": "woman sharpens a knife.",
+    "timestamp": [
+      11.0,
+      30.5
+    ],
+    "duration": 38.3,
+    "GRPO": [
+      {
+        "q": "woman sharpens a knife.",
+        "a": "<answer>11.0 to 30.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman sharpens scissors.",
+        "a": "<answer>This query does not align well with the video segment. The segment shows woman sharpening a knife, not scissors. The object in the video does not match the query.</answer><correct>woman sharpens a knife.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s15-d61-cam-002.avi",
+    "query_text": "woman walks out after putting knife and sharpener back to the cupboard",
+    "timestamp": [
+      39.0,
+      46.5
+    ],
+    "duration": 46.67,
+    "GRPO": [
+      {
+        "q": "woman walks out after putting knife and sharpener back to the cupboard",
+        "a": "<answer>39.0 to 46.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman walks out after taking knife and sharpener out of the cupboard",
+        "a": "<answer>The query does not accurately describe the video. In the video, the woman walks out after putting the knife and sharpener back into the cupboard, whereas the query states she walks out after taking them out. The described action is the opposite of what happens.</answer><correct>woman walks out after putting knife and sharpener back to the cupboard</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s17-d61-cam-002.avi",
+    "query_text": "man with a blue glove takes out a knife from a cupboard.",
+    "timestamp": [
+      6.0,
+      11.0
+    ],
+    "duration": 40.78,
+    "GRPO": [
+      {
+        "q": "man with a blue glove takes out a knife from a cupboard.",
+        "a": "<answer>6.0 to 11.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man with a red glove takes out a knife from a cupboard.",
+        "a": "<answer>In the video, man is shown wearing a red glove, not blue glove, and taking out a knife from a cupboard.</answer><correct>man with a blue glove takes out a knife from a cupboard.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s21-d55-cam-002.avi",
+    "query_text": "The person takes a round chopping board out of the drawer.",
+    "timestamp": [
+      15.5,
+      20.5
+    ],
+    "duration": 72.55,
+    "GRPO": [
+      {
+        "q": "The person takes a round chopping board out of the drawer.",
+        "a": "<answer>15.5 to 20.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "The person takes a square chopping board out of the drawer.",
+        "a": "<answer>The video footage depicts person taking out a round chopping board, not a square one. The shape of the chopping board does not match.</answer><correct>The person takes a round chopping board out of the drawer.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s27-d60-cam-002.avi",
+    "query_text": "man takes out a grater and places it on the white plate.",
+    "timestamp": [
+      26.5,
+      31.0
+    ],
+    "duration": 74.97,
+    "GRPO": [
+      {
+        "q": "man takes out a grater and places it on the white plate.",
+        "a": "<answer>26.5 to 31.0</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man takes out a grater and places it on the pink plate.",
+        "a": "<answer>The video shows a man taking out a grater and placing it on the white plate, while the query mentions pink plate. The color of plate does not match.</answer><correct>man takes out a grater and places it on the white plate.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s27-d61-cam-002.avi",
+    "query_text": "man takes out two knives and puts one back into the drawer.",
+    "timestamp": [
+      7.0,
+      28.5
+    ],
+    "duration": 82.99,
+    "GRPO": [
+      {
+        "q": "man takes out two knives and puts one back into the drawer.",
+        "a": "<answer>7.0 to 28.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "man takes out one knife and puts one back into the drawer.",
+        "a": "<answer>The video depicts man taking out two knives, not one knife, and putting one back into the drawer. The number of knives does not match.</answer><correct>man takes out two knives and puts one back into the drawer.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/Counting"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s22-d29-cam-002.avi",
+    "query_text": "a woman removes fresh herbs from the refrigerator.",
+    "timestamp": [
+      10.0,
+      23.5
+    ],
+    "duration": 110.65,
+    "GRPO": [
+      {
+        "q": "a woman removes fresh herbs from the refrigerator.",
+        "a": "<answer>10.0 to 23.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "a woman removes fresh garlic from the refrigerator.",
+        "a": "<answer>The query does not accurately match the video. The video shows the woman removing fresh herbs from the refrigerator, while the query mentions she removes fresh garlic. The item being taken out is different.</answer><correct>a woman removes fresh herbs from the refrigerator.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/s24-d25-cam-002.avi",
+    "query_text": "woman uses a bread knife to cut two pieces of bread.",
+    "timestamp": [
+      35.5,
+      76.5
+    ],
+    "duration": 90.68,
+    "GRPO": [
+      {
+        "q": "woman uses a bread knife to cut two pieces of bread.",
+        "a": "<answer>35.5 to 76.5</answer><correct></correct>",
+        "r": true
+      },
+      {
+        "q": "woman uses scissors to cut two pieces of bread.",
+        "a": "<answer>The query does not accurately describe the video. The video shows the woman using a bread knife to cut two pieces of bread, whereas the query states she uses scissors. The tool used in the action is different.</answer><correct>woman uses a bread knife to cut two pieces of bread.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/V885w29UBHo.mp4",
+    "query_text": "man is cleaning a red car with an orange towel.",
+    "timestamp": [
+      19.5,
+      26.0
+    ],
+    "duration": 26.49,
+    "GRPO": [
+      {
+        "q": "man is cleaning a red car with an orange towel.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "man is cleaning a red car with a blue towel.",
+        "a": "<answer>This query does not align well with the video. The color of the towel the man uses to wipe the car is orange, not blue.</answer><correct>man is cleaning a red car with an orange towel.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/ngPMzQrWGsI.mp4",
+    "query_text": "woman inserts money into a vending machine.",
+    "timestamp": [
+      0.0,
+      6.0
+    ],
+    "duration": 25.7,
+    "GRPO": [
+      {
+        "q": "woman inserts money into a vending machine.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "woman inserts money into a ticket machine.",
+        "a": "<answer>This query does not align well with the video.  The place where the girl inserts the money is not a ticket machine but a vending machine.</answer><correct>woman inserts money into a vending machine.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/oOQ2fVYeu6Y.mp4",
+    "query_text": "person demonstrates how to cut mango properly.",
+    "timestamp": [
+      32.5,
+      116.0
+    ],
+    "duration": 123.58,
+    "GRPO": [
+      {
+        "q": "person demonstrates how to cut mango properly.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person demonstrates how to cut apple properly.",
+        "a": "<answer>This query does not align well with the video. The video demonstrates how to properly cut a mango. An apple does not appear in the video.</answer><correct>person demonstrates how to cut mango properly.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/wWUikHFmURs.mp4",
+    "query_text": "person paints a paper in two directions with a white gesso.",
+    "timestamp": [
+      25.5,
+      133.0
+    ],
+    "duration": 141.31,
+    "GRPO": [
+      {
+        "q": "person paints a paper in two directions with a white gesso.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person paints a paper in two directions with a black gesso.",
+        "a": "<answer>This query does not align well with the video. The person paints on the paper in one direction using white gesso, lets it dry, and then paints in another direction. No scene shows painting with black gesso.</answer><correct>person paints a paper in two directions with a white gesso.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/79kyaJxHXLE.mp4",
+    "query_text": "man stops by and helps a woman who is planting a plant.",
+    "timestamp": [
+      115.0,
+      157.0
+    ],
+    "duration": 171.44,
+    "GRPO": [
+      {
+        "q": "man stops by and helps a woman who is planting a plant.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "man walks past a woman who is planting a plant.",
+        "a": "<answer>This query does not align well with the video. The man in the video does not walk past the girl who is planting a plant. He stops and approaches her to help.</answer><correct>man stops by and helps a woman who is planting a plant.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/V_j8W5LbsPA.mp4",
+    "query_text": "a female chef adds seasonings to an egg fry.",
+    "timestamp": [
+      125.0,
+      160.0
+    ],
+    "duration": 178.76,
+    "GRPO": [
+      {
+        "q": "a female chef adds seasonings to an egg fry.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "a male chef adds seasonings to an egg fry.",
+        "a": "<answer>This query does not align well with the video. Only a female chef appears in the video. A male chef does not appear.</answer><correct>a female chef adds seasonings to an egg fry.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/IMgMVNUHB8w.mp4",
+    "query_text": "man uses a power drill to drive some nails.",
+    "timestamp": [
+      126.5,
+      168.0
+    ],
+    "duration": 190.29,
+    "GRPO": [
+      {
+        "q": "man uses a power drill to drive some nails.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "man uses a hammer to drive some nails.",
+        "a": "<answer>This query does not align well with the video. In the video, there are scenes of a man using a screwdriver or a power driver to drive some nails. However, there is no scene of him using a hammer to drive any nails.</answer><correct>man uses a power drill to drive some nails.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/KtFtxn3LAWs.mp4",
+    "query_text": "a man is explaining something while sitting by a computer.",
+    "timestamp": [
+      3.5,
+      41.0
+    ],
+    "duration": 187.33,
+    "GRPO": [
+      {
+        "q": "a man is explaining something while sitting by a computer.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "a man is typing something while sitting by a computer.",
+        "a": "<answer>This query does not align well with the video. The man in the video is sitting next to a computer and explaining something; there is no scene showing him typing.</answer><correct>a man is explaining something while sitting by a computer.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/5FgUs8Ajcd0.mp4",
+    "query_text": "a man fills two glass cups with ice.",
+    "timestamp": [
+      45.0,
+      60.0
+    ],
+    "duration": 221.17,
+    "GRPO": [
+      {
+        "q": "a man fills two glass cups with ice.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "a woman fills two glass cups with ice.",
+        "a": "<answer>This query does not align well with the video. The person who fills two glass cups with ice in the video is a man, not a woman. A woman does not appear in any part of the video.</answer><correct>a man fills two glass cups with ice.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/Nj1aD-3jLhU.mp4",
+    "query_text": "two men work together to attach a door to a storage cabinet.",
+    "timestamp": [
+      81.0,
+      107.0
+    ],
+    "duration": 212.71,
+    "GRPO": [
+      {
+        "q": "two men work together to attach a door to a storage cabinet.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "three men work together to attach a door to a storage cabinet.",
+        "a": "<answer>This query does not align well with the video. The number of men attaching the doors of the storage cabinet in the video is two, not three.</answer><correct>two men work together to attach a door to a storage cabinet.</correct>",  
+        "r": false,
+        "c": [
+          "Attribute/Counting"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/Fsn_hUPDtTw.mp4",
+    "query_text": "person is measuring the length of a battery with a ruler.",
+    "timestamp": [
+      63.5,
+      72.0
+    ],
+    "duration": 251.04,
+    "GRPO": [
+      {
+        "q": "person is measuring the length of a battery with a ruler.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person is measuring the length of a drill with a ruler.",
+        "a": "<answer>This query does not align well with the video. The object the person is measuring the length with a ruler is not a drill, but the drill’s battery.</answer><correct>person is measuring the length of a battery with a ruler.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/kdgTkc9zOcg.mp4",
+    "query_text": "a person accidentally breaks a part of a wooden watch while trying to disassemble the watch.",
+    "timestamp": [
+      80.0,
+      91.0
+    ],
+    "duration": 242.31,
+    "GRPO": [
+      {
+        "q": "a person accidentally breaks a part of a wooden watch while trying to disassemble the watch.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "a person accidentally breaks a part of a metal watch while trying to disassemble the watch.",
+        "a": "<answer>This query does not align well with the video. The clock that the person is disassembling in the video is made of wood, not metal.</answer><correct>a person accidentally breaks a part of a wooden watch while trying to disassemble the watch.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/DLT1I_BVRHc.mp4",
+    "query_text": "man scratches the surface of a key with a pencil.",
+    "timestamp": [
+      128.0,
+      167.0
+    ],
+    "duration": 279.71,
+    "GRPO": [
+      {
+        "q": "man scratches the surface of a key with a pencil.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "man writes with a pencil on paper.",
+        "a": "<answer>This query does not align well with the video. In the video, there are scenes of scribbling sideways on paper with a pencil or filing the grooves of a key with a pencil. There is no scene showing writing on paper with a pencil.</answer><correct>man scratches the surface of a key with a pencil.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction",
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/Qp-doEVBDYQ.mp4",
+    "query_text": "a person successfully removes a broken piece of a key.",
+    "timestamp": [
+      198.0,
+      220.0
+    ],
+    "duration": 294.73,
+    "GRPO": [
+      {
+        "q": "a person successfully removes a broken piece of a key.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "a person inserts a broken piece of a key.",
+        "a": "<answer>This query does not align well with the video. The video shows a scene where a broken piece of a key is being removed from a keyhole. There is no scene showing the act of inserting the broken key piece into the keyhole.</answer><correct>a person successfully removes a broken piece of a key.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/EO5TzAekimg.mp4",
+    "query_text": "a man and a woman are using the sofa bed after assembling it.",
+    "timestamp": [
+      44.0,
+      52.5
+    ],
+    "duration": 55.69,
+    "GRPO": [
+      {
+        "q": "a man and a woman are using the sofa bed after assembling it.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "a man and a woman are using the book shelf after assembling it.",
+        "a": "<answer>This query does not align well with the video. In the video, a man and a woman assemble a sofa bed and are later shown sitting on the sofa or unfolding the sofa bed to lie down. A bookshelf does not appear anywhere in the video.</answer><correct>a man and a woman are using the sofa bed after assembling it.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectExistence"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/ma6wRkp6ZoU.mp4",
+    "query_text": "person removes license plate from a white car.",
+    "timestamp": [
+      0.0,
+      4.0
+    ],
+    "duration": 59.0,
+    "GRPO": [
+      {
+        "q": "person removes license plate from a white car.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person removes license plate from a red car.",
+        "a": "<answer>This query does not align well with the video. The color of the vehicle from which the person in the video is removing the license plate is white, not red.</answer><correct>person removes license plate from a white car.</correct>",
+        "r": false,
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/gEAhGhy5pug.mp4",
+    "query_text": "person replaces a light bulb in a drink refrigerator.",
+    "timestamp": [
+      6.0,
+      69.0
+    ],
+    "duration": 80.65,
+    "GRPO": [
+      {
+        "q": "person replaces a light bulb in a drink refrigerator.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person cleans a drink refrigerator.",
+        "a": "<answer>This query does not align well with the video. The action shown by the man in the video is replacing the light bulb of a beverage refrigerator. The video does not show any scene of the man cleaning the beverage refrigerator.</answer><correct>person replaces a light bulb in a drink refrigerator.</correct>",
+        "r": false,
+        "c": [
+          "Action/FineGrainedAction"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/mnr485IKPcs.mp4",
+    "query_text": "man explains how to replace a water filter inside a refrigerator.",
+    "timestamp": [
+      7.5,
+      66.0
+    ],
+    "duration": 88.13,
+    "GRPO": [
+      {
+        "q": "man explains how to replace a water filter inside a refrigerator.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "man explains how to replace a water filter under a sink.",
+        "a": "<answer>This query does not align well with the video. What the man is explaining in this video is not how to replace the sink’s water filter, but how to replace the refrigerator’s water filter.</answer><correct>man explains how to replace a water filter inside a refrigerator.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectSpatialRelation"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/LG3yA7ITBKI.mp4",
+    "query_text": "person glues a handle onto a bag made of newspaper.",
+    "timestamp": [
+      83.0,
+      93.0
+    ],
+    "duration": 106.54,
+    "GRPO": [
+      {
+        "q": "person glues a handle onto a bag made of newspaper.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person glues a handle onto a plastic bag.",
+        "a": "<answer>This query does not align well with the video. The person glues a handle onto a bag made of newspaper, not a plastic bag.</answer><correct>person glues a handle onto a bag made of newspaper.</correct>",
+        "r": false,
+        "c": [
+          "Object/ObjectSpatialRelation"
+        ]
+      }
+    ]
+  },
+  {
+    "video": "../dataset/selected_videos/LYfUb8x9Ksg.mp4",
+    "query_text": "person is spreading white toothpaste on a screen with hand.",
+    "timestamp": [
+      3.0,
+      43.0
+    ],
+    "duration": 113.75,
+    "GRPO": [
+      {
+        "q": "person is spreading white toothpaste on a screen with hand.",
+        "a": "",
+        "r": true
+      },
+      {
+        "q": "person is spreading pink toothpaste on a screen with hand.",
+        "r": false,
+        "a": "<answer>The person spreads white toothpaste, not pink toothpaste, on the tablet.</answer><correct>person is spreading white toothpaste on a screen with hand.</correct>",
+        "c": [
+          "Attribute/AttributeValue"
+        ]
+      }
+    ]
+  }
+]
