@@ -117,7 +117,7 @@ bash scripts/inference.sh
 
 ### Stage 2: Evaluation (LLM-based Assessment)
 
-Run evaluation separately for each inference output:
+Evaluation uses **GPT-5-mini** as a judge. Run evaluation separately for each inference output:
 
 ```bash
 # Configure your OpenAI API key
