@@ -69,8 +69,8 @@ We provide three types of test datasets, each designed to assess different aspec
 
 | Dataset | Type | Files |
 |---------|------|-------|
-| **HI-VTG** | Hard-Irrelevant VTG | `hi_vtg_tvgbench.json`, `hi_vtg_activitynet.json` |
-| **SS-VTG** | Simply Shuffled RA-VTG | `ss_vtg_activitynet.json` |
+| **HI-VTG** | Hard-Irrelevant VTG | `hi_vtg_tvgbench.json`, `hi_vtg_activitynet.json`, `hi_vtg_charades.json` |
+| **SS-VTG** | Simply Shuffled RA-VTG | `ss_vtg_activitynet.json`, `ss_vtg_charades.json`, `ss_vtg_qvhighlight.json` |
 | **Human-Anno** | Human Annotation RA-VTG | `human_anno.json` |
 
 ### Stage 1: Inference (Model Response Generation)
