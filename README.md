@@ -179,14 +179,16 @@ Pre-trained RA-RFT models will be available on Hugging Face Hub:
 
 ## 📝 Citation
 
-If you find this work useful for your research, please cite:
+If you find this work useful for your research, please cite the [CVPR 2026 paper](https://openaccess.thecvf.com/content/CVPR2026/html/Lee_Learning_to_Refuse_Refusal-Aware_Reinforcement_Fine-Tuning_for_Hard-Irrelevant_Queries_in_CVPR_2026_paper.html):
 
 ```bibtex
-@article{lee2025learning,
-  title={Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding},
+@InProceedings{Lee_2026_CVPR,
   author={Lee, Jin-Seop and Lee, SungJoon and Jung, SeongJun and Li, Boyang and Lee, Jee-Hyong},
-  journal={arXiv preprint arXiv:2511.23151},
-  year={2025}
+  title={Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month={June},
+  year={2026},
+  pages={10397-10407}
 }
 ```
 
