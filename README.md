@@ -174,8 +174,9 @@ bash scripts/evaluation.sh
 
 ## 🤖 Model Checkpoints
 
-Pre-trained RA-RFT models will be available on Hugging Face Hub:
-- [RA-RFT-Qwen2.5-VL-7B](https://huggingface.co/JINSUBY/RA-RFT-Qwen2.5-VL-7B) (Coming soon)
+The RA-RFT checkpoint is available on Hugging Face Hub:
+
+- [RA-RFT-Qwen2.5-VL-7B](https://huggingface.co/nuetee/RA-RFT-Qwen2.5-VL-7B)
 
 ## 📝 Citation
 
